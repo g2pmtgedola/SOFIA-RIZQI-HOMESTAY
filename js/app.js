@@ -319,11 +319,15 @@ async function fetchSettings() {
 function updatePricingUI() {
   const sidebarRate = document.getElementById('sidebar-rate-per-night');
   const sidebarDeposit = document.getElementById('sidebar-security-deposit');
+  const heroRate = document.getElementById('hero-rate-per-night');
+  const heroDeposit = document.getElementById('hero-security-deposit');
   const inputRate = document.getElementById('setting-rate-per-night');
   const inputDeposit = document.getElementById('setting-security-deposit');
 
   if (sidebarRate) sidebarRate.innerText = `RM ${currentSettings.ratePerNight} / malam`;
   if (sidebarDeposit) sidebarDeposit.innerText = `RM ${currentSettings.securityDeposit}`;
+  if (heroRate) heroRate.innerText = `RM ${currentSettings.ratePerNight}`;
+  if (heroDeposit) heroDeposit.innerText = `RM ${currentSettings.securityDeposit}`;
   if (inputRate && document.activeElement !== inputRate) inputRate.value = currentSettings.ratePerNight;
   if (inputDeposit && document.activeElement !== inputDeposit) inputDeposit.value = currentSettings.securityDeposit;
 

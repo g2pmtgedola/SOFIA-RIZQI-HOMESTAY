@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SofiaRizqi Homestay - Sistem Tempahan & Resit Rasmi</title>
   
+  <!-- Google Fonts: Plus Jakarta Sans (Nexora Theme) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -23,49 +28,65 @@
         extend: {
           colors: {
             navy: {
-              800: '#1e3a66',
-              900: '#0f2444',
+              50: '#FBF9FF',
+              100: '#F3EFFF',
+              200: '#E2D9FC',
+              700: '#2E2259',
+              800: '#1F1742',
+              900: '#130C2E', // Deep Nexora Night
             },
             gold: {
-              500: '#daa520',
-              600: '#b8860b',
+              400: '#A78BFA',
+              500: '#7C5CFC', // Nexora Signature Vivid Purple
+              600: '#6845EC',
+            },
+            nexora: {
+              purple: '#7C5CFC',
+              lilac: '#A78BFA',
+              light: '#EDE9FE',
+              dark: '#130C2E',
+              surface: '#FAF8FF',
+              border: '#E8E3FA',
             }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
           }
         }
       }
     }
   </script>
 </head>
-<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col font-sans">
+<body class="bg-[#FAF8FF] text-slate-900 min-h-screen flex flex-col font-sans selection:bg-purple-200 selection:text-purple-900">
 
-  <!-- TOP HEADER & BRAND BAR -->
-  <header class="bg-navy-900 text-white shadow-md border-b-2 border-gold-500 sticky top-0 z-40">
+  <!-- TOP HEADER & BRAND BAR - NEXORA MINIMALIST STYLE -->
+  <header class="bg-[#130C2E] text-white shadow-sm border-b border-purple-900/40 sticky top-0 z-40 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       
       <!-- Logo & Title -->
       <div class="flex items-center gap-3">
         <!-- Sidebar Navigation Toggle Button (Left) -->
-        <button id="btn-show-sidebar" onclick="toggleSidebarNav()" class="p-2 bg-navy-800 hover:bg-navy-700 text-gold-500 rounded-xl border border-gold-500/40 shadow transition">
+        <button id="btn-show-sidebar" onclick="toggleSidebarNav()" class="p-2.5 bg-white/10 hover:bg-white/15 text-[#A78BFA] rounded-2xl border border-white/10 shadow-sm transition">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
 
-        <div class="w-10 h-10 rounded-full border-2 border-gold-500 bg-navy-900 text-white flex items-center justify-center font-bold text-xs shadow-inner">
-          <span class="text-gold-500 font-serif">SR</span>
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#7C5CFC] to-[#A78BFA] text-white flex items-center justify-center font-extrabold text-sm shadow-md shadow-purple-500/20 tracking-tighter">
+          SR
         </div>
         <div>
-          <h1 class="text-lg md:text-xl font-bold tracking-wide text-white brand-title">SOFIA RIZQI HOMESTAY</h1>
-          <p class="text-[11px] text-gold-500 font-medium">Sistem Tempahan & Resit Pembayaran Rasmi</p>
+          <h1 class="text-base md:text-lg font-black tracking-tight text-white brand-title">SOFIA RIZQI HOMESTAY</h1>
+          <p class="text-[11px] text-[#A78BFA] font-medium flex items-center gap-1"><span>✦</span> Sistem Tempahan & Resit Rasmi</p>
         </div>
       </div>
 
       <!-- User Info & Auth Controls -->
       <div class="flex items-center gap-3">
-        <div id="user-info-bar" class="hidden flex items-center gap-2 bg-navy-800 px-3 py-1.5 rounded-xl border border-gold-500/30">
-          <i data-lucide="user-check" class="w-4 h-4 text-gold-500"></i>
+        <div id="user-info-bar" class="hidden flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-2xl border border-white/15 shadow-sm">
+          <i data-lucide="user-check" class="w-4 h-4 text-[#A78BFA]"></i>
           <button onclick="openUserProfileModal()" class="flex items-center gap-1.5 hover:underline text-left" title="Kemaskini Profil & Tukar Kata Laluan">
             <span id="current-user-name" class="text-xs font-semibold text-white">Pengguna</span>
-            <span id="current-user-role" class="text-[10px] bg-gold-500 text-navy-900 px-2 py-0.5 rounded-full font-bold uppercase">Role</span>
-            <i data-lucide="edit-3" class="w-3.5 h-3.5 text-gold-500 ml-0.5"></i>
+            <span id="current-user-role" class="text-[10px] bg-[#7C5CFC] text-white px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">Role</span>
+            <i data-lucide="edit-3" class="w-3.5 h-3.5 text-[#A78BFA] ml-0.5"></i>
           </button>
           <button onclick="logout()" title="Log Keluar" class="ml-2 text-slate-300 hover:text-red-400">
             <i data-lucide="log-out" class="w-4 h-4"></i>
@@ -73,7 +94,7 @@
         </div>
 
         <div id="auth-buttons" class="flex items-center gap-2">
-          <button onclick="showLoginMenu()" class="bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 shadow transition">
+          <button onclick="showLoginMenu()" class="bg-[#7C5CFC] hover:bg-[#6845EC] text-white font-bold px-4 py-2.5 rounded-2xl text-xs flex items-center gap-1.5 shadow-md shadow-purple-500/25 transition">
             <i data-lucide="log-in" class="w-4 h-4"></i> Log Masuk / Daftar
           </button>
         </div>
@@ -84,11 +105,11 @@
   <!-- MAIN WRAPPER WITH SIDEBAR NAVIGATION -->
   <div class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6 flex flex-col md:flex-row gap-6" id="main-container">
     
-    <!-- LEFT SIDEBAR NAVIGATION PANEL -->
-    <aside id="sidebar-nav" class="w-full md:w-64 bg-white rounded-2xl p-4 shadow-sm border border-slate-200 shrink-0 space-y-4">
-      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-navy-900 flex items-center gap-2">
-          <i data-lucide="compass" class="w-4 h-4 text-gold-500"></i> Menu Utama
+    <!-- LEFT SIDEBAR NAVIGATION PANEL - NEXORA AESTHETIC -->
+    <aside id="sidebar-nav" class="w-full md:w-64 bg-white rounded-3xl p-5 shadow-sm border border-[#E8E3FA] shrink-0 space-y-4">
+      <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-3">
+        <h2 class="text-xs font-extrabold uppercase tracking-wider text-[#130C2E] flex items-center gap-2">
+          <i data-lucide="compass" class="w-4 h-4 text-[#7C5CFC]"></i> Menu Utama
         </h2>
         <button onclick="toggleSidebarNav()" class="text-slate-400 hover:text-slate-600">
           <i data-lucide="x" class="w-4 h-4"></i>
@@ -96,39 +117,39 @@
       </div>
 
       <nav class="space-y-1.5">
-        <button id="tab-login-menu" onclick="switchTab('login-menu')" class="w-full text-left px-3 py-2.5 rounded-xl text-xs font-medium flex items-center gap-2 transition text-slate-600 hover:bg-slate-100">
-          <i data-lucide="log-in" class="w-4 h-4 text-gold-500"></i> Menu Log Masuk / Daftar
+        <button id="tab-login-menu" onclick="switchTab('login-menu')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-[#F3EFFF] hover:text-[#7C5CFC]">
+          <i data-lucide="log-in" class="w-4 h-4 text-[#7C5CFC]"></i> Menu Log Masuk / Daftar
         </button>
 
-        <button id="tab-dashboard" onclick="switchTab('dashboard')" class="w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 transition bg-navy-900 text-gold-500 shadow">
+        <button id="tab-dashboard" onclick="switchTab('dashboard')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-bold flex items-center gap-2 transition bg-[#7C5CFC] text-white shadow-md shadow-purple-500/25">
           <i data-lucide="calendar" class="w-4 h-4"></i> Kalendar Tempahan
         </button>
         
-        <button id="tab-my-bookings" onclick="switchTab('my-bookings')" class="w-full text-left px-3 py-2.5 rounded-xl text-xs font-medium flex items-center gap-2 transition text-slate-600 hover:bg-slate-100 hidden">
-          <i data-lucide="clock" class="w-4 h-4 text-gold-500"></i> Tempahan Saya
+        <button id="tab-my-bookings" onclick="switchTab('my-bookings')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-[#F3EFFF] hover:text-[#7C5CFC] hidden">
+          <i data-lucide="clock" class="w-4 h-4 text-[#7C5CFC]"></i> Tempahan Saya
         </button>
 
-        <button id="tab-penyewa-list" onclick="switchTab('penyewa-list')" class="w-full text-left px-3 py-2.5 rounded-xl text-xs font-medium flex items-center gap-2 transition text-slate-600 hover:bg-slate-100 hidden">
-          <i data-lucide="users" class="w-4 h-4 text-gold-500"></i> Pengurusan Admin (Tempahan)
+        <button id="tab-penyewa-list" onclick="switchTab('penyewa-list')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-[#F3EFFF] hover:text-[#7C5CFC] hidden">
+          <i data-lucide="users" class="w-4 h-4 text-[#7C5CFC]"></i> Pengurusan Admin (Tempahan)
         </button>
 
-        <button id="tab-users-list" onclick="switchTab('users-list')" class="w-full text-left px-3 py-2.5 rounded-xl text-xs font-medium flex items-center gap-2 transition text-slate-600 hover:bg-slate-100 hidden">
-          <i data-lucide="shield-check" class="w-4 h-4 text-gold-500"></i> Pengurusan User (Admin)
+        <button id="tab-users-list" onclick="switchTab('users-list')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-[#F3EFFF] hover:text-[#7C5CFC] hidden">
+          <i data-lucide="shield-check" class="w-4 h-4 text-[#7C5CFC]"></i> Pengurusan User (Admin)
         </button>
       </nav>
 
-      <hr class="border-slate-100">
+      <hr class="border-[#F0EBFE]">
 
-      <div class="bg-navy-900 text-white p-4 rounded-xl space-y-2 border border-gold-500/30">
-        <div class="flex items-center gap-2 text-gold-500 font-bold text-xs">
-          <i data-lucide="home" class="w-4 h-4"></i> Homestay Info
+      <div class="bg-[#130C2E] text-white p-4 rounded-2xl space-y-2 border border-purple-900/50 shadow-sm relative overflow-hidden">
+        <div class="flex items-center gap-2 text-[#A78BFA] font-bold text-xs uppercase tracking-wide">
+          <i data-lucide="home" class="w-4 h-4 text-[#7C5CFC]"></i> Homestay Info
         </div>
         <p class="text-[11px] text-slate-300">Kadar Sewa: <strong id="sidebar-rate-per-night" class="text-white">RM 350 / malam</strong></p>
         <p class="text-[11px] text-slate-300">Deposit Sekuriti: <strong id="sidebar-security-deposit" class="text-white">RM 100</strong></p>
-        <p class="text-[10px] text-slate-400">📍 Baling, Kedah</p>
+        <p class="text-[10px] text-[#A78BFA] flex items-center gap-1">📍 Baling, Kedah</p>
       </div>
       
-      <button onclick="openBookingModal()" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-900 font-bold py-3 rounded-xl shadow-md text-xs flex items-center justify-center gap-1.5 transition">
+      <button onclick="openBookingModal()" class="w-full bg-[#7C5CFC] hover:bg-[#6845EC] text-white font-bold py-3 rounded-2xl shadow-md shadow-purple-500/25 text-xs flex items-center justify-center gap-2 transition transform active:scale-95">
         <i data-lucide="plus-circle" class="w-4 h-4"></i> + Tempahan Baharu
       </button>
     </aside>
@@ -206,61 +227,105 @@
       </div>
 
       <!-- TAB 1: DASHBOARD & MAIN CALENDAR VIEW -->
-      <div id="view-dashboard" class="space-y-4">
+      <div id="view-dashboard" class="space-y-6">
         
+        <!-- NEXORA HERO SHOWCASE CARD -->
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#130C2E] via-[#1E1446] to-[#2E1668] text-white p-6 sm:p-8 shadow-xl border border-purple-500/20">
+          <!-- Background Ambient Glow -->
+          <div class="absolute -right-16 -top-16 w-72 h-72 bg-[#7C5CFC]/25 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute left-1/3 -bottom-20 w-80 h-80 bg-purple-900/30 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="space-y-3 max-w-xl">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-[#C4B5FD] backdrop-blur-md border border-white/15 tracking-wide">
+                <span class="w-2 h-2 rounded-full bg-[#7C5CFC] animate-pulse"></span>
+                <span>✦ PENGINAPAN PREMIUM & KESELESAAN SEJATI</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight text-white">
+                Define Your Stay, <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A78BFA] via-[#C4B5FD] to-white">Own Your Comfort</span>
+              </h2>
+              <p class="text-xs sm:text-sm text-purple-200/80 leading-relaxed">
+                Pengalaman percutian dan penginapan keluarga yang serba moden, tenang, dan selesa. Semak ketersediaan tarikh anda sekarang.
+              </p>
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                <button onclick="openBookingModal()" class="px-5 py-2.5 rounded-full bg-[#7C5CFC] hover:bg-[#6845EC] text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition transform active:scale-95 flex items-center gap-2 cursor-pointer">
+                  <i data-lucide="plus-circle" class="w-4 h-4"></i> Tempah Penginapan Sekarang
+                </button>
+                <div class="flex items-center gap-2 text-[11px] font-semibold text-purple-200/90 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Pengesahan Rasmi Pantas
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Info Badge Grid -->
+            <div class="grid grid-cols-2 gap-3 w-full md:w-auto">
+              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 text-center">
+                <p class="text-[10px] uppercase tracking-wider text-purple-300 font-bold">Kadar Sewa</p>
+                <p class="text-lg font-extrabold text-white mt-0.5"><span id="hero-rate-per-night">RM 350</span></p>
+                <p class="text-[10px] text-purple-300/70">per malam</p>
+              </div>
+              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 text-center">
+                <p class="text-[10px] uppercase tracking-wider text-purple-300 font-bold">Deposit Sekuriti</p>
+                <p class="text-lg font-extrabold text-[#A78BFA] mt-0.5"><span id="hero-security-deposit">RM 100</span></p>
+                <p class="text-[10px] text-purple-300/70">dipulangkan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- ADMIN ONLY OVERVIEW STATS CARDS -->
         <div id="stats-overview-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 hidden">
-          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between">
             <div>
-              <p class="text-xs text-slate-500 font-medium">Jumlah Tempahan</p>
-              <h3 id="stat-total" class="text-2xl font-bold text-navy-900">0</h3>
+              <p class="text-xs text-slate-500 font-semibold">Jumlah Tempahan</p>
+              <h3 id="stat-total" class="text-2xl font-extrabold text-[#130C2E] mt-1">0</h3>
             </div>
-            <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
-              <i data-lucide="calendar" class="w-5 h-5"></i>
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 text-[#7C5CFC] flex items-center justify-center">
+              <i data-lucide="calendar" class="w-6 h-6"></i>
             </div>
           </div>
-          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between">
             <div>
-              <p class="text-xs text-slate-500 font-medium">Disahkan</p>
-              <h3 id="stat-confirmed" class="text-2xl font-bold text-emerald-600">0</h3>
+              <p class="text-xs text-slate-500 font-semibold">Disahkan</p>
+              <h3 id="stat-confirmed" class="text-2xl font-extrabold text-emerald-600 mt-1">0</h3>
             </div>
-            <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-              <i data-lucide="check-circle" class="w-5 h-5"></i>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="check-circle" class="w-6 h-6"></i>
             </div>
           </div>
-          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between">
             <div>
-              <p class="text-xs text-slate-500 font-medium">Menunggu Pengesahan</p>
-              <h3 id="stat-pending" class="text-2xl font-bold text-amber-600">0</h3>
+              <p class="text-xs text-slate-500 font-semibold">Menunggu Pengesahan</p>
+              <h3 id="stat-pending" class="text-2xl font-extrabold text-amber-600 mt-1">0</h3>
             </div>
-            <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
-              <i data-lucide="clock" class="w-5 h-5"></i>
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center">
+              <i data-lucide="clock" class="w-6 h-6"></i>
             </div>
           </div>
-          <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between">
             <div>
-              <p class="text-xs text-slate-500 font-medium">Jumlah Hasil</p>
-              <h3 id="stat-revenue" class="text-2xl font-bold text-navy-900">RM 0</h3>
+              <p class="text-xs text-slate-500 font-semibold">Jumlah Hasil</p>
+              <h3 id="stat-revenue" class="text-2xl font-extrabold text-[#130C2E] mt-1">RM 0</h3>
             </div>
-            <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center">
-              <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+            <div class="w-12 h-12 rounded-2xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center">
+              <i data-lucide="dollar-sign" class="w-6 h-6"></i>
             </div>
           </div>
         </div>
 
         <!-- MAIN CALENDAR CONTAINER -->
-        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-[#E8E3FA] space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0EBFE] pb-4">
             <div>
-              <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2">
-                <i data-lucide="calendar-days" class="w-5 h-5 text-gold-500"></i> Kalendar Penginapan & Ketersediaan
+              <h3 class="text-lg font-bold text-[#130C2E] flex items-center gap-2">
+                <i data-lucide="calendar-days" class="w-5 h-5 text-[#7C5CFC]"></i> Kalendar Penginapan & Ketersediaan
               </h3>
               <p class="text-xs text-slate-500">Tarikh diwarnakan merah telah ditempah & dikunci.</p>
             </div>
-            <div class="flex items-center gap-4 text-xs font-semibold">
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span> Tarikh Bebas</span>
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span> Disahkan (Telah Ditempah)</span>
-              <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span> Menunggu Pengesahan</span>
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-semibold">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Tarikh Bebas</span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200/60"><span class="w-2 h-2 rounded-full bg-rose-500 inline-block"></span> Disahkan (Ditempah)</span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200/60"><span class="w-2 h-2 rounded-full bg-[#7C5CFC] inline-block"></span> Menunggu</span>
             </div>
           </div>
 
