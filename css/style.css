@@ -1,39 +1,39 @@
-/* Custom Styles for Homestay Booking System - Nexora Streetwear Theme */
+/* Custom Styles for Homestay Booking System - Premium Royal Blue & Crimson Red Theme */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --primary-navy: #130C2E;
-  --secondary-navy: #1F1742;
-  --gold-accent: #7C5CFC;
-  --gold-light: #F3EFFF;
-  --border-color: #E8E3FA;
+  --primary-navy: #0A1128;
+  --secondary-navy: #1C2541;
+  --gold-accent: #DC2626;
+  --gold-light: #EFF6FF;
+  --border-color: #E2E8F0;
 }
 
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #FAF8FF;
+  background-color: #F8FAFC;
   color: #0F172A;
   letter-spacing: -0.01em;
 }
 
-/* Header & Logo styling - Nexora Modern Typography */
+/* Header & Logo styling - Premium Modern Typography */
 .brand-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
   letter-spacing: -0.03em;
 }
 
-/* Card hover effects - Soft Lavender Glow */
+/* Card hover effects - Soft Royal Glow */
 .hover-card {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 1.25rem;
 }
 .hover-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 32px -8px rgba(124, 92, 252, 0.15);
+  box-shadow: 0 16px 32px -8px rgba(37, 99, 235, 0.15);
 }
 
-/* FullCalendar Overrides - Nexora Style */
+/* FullCalendar Overrides - Premium Blue & Red Style */
 .fc {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
@@ -43,23 +43,23 @@ body {
 .fc-toolbar-title {
   font-size: 1.15rem !important;
   font-weight: 800 !important;
-  color: #130C2E !important;
+  color: #0A1128 !important;
   letter-spacing: -0.02em !important;
 }
 .fc-button-primary {
-  background-color: #130C2E !important;
-  border-color: #130C2E !important;
+  background-color: #0A1128 !important;
+  border-color: #0A1128 !important;
   border-radius: 0.75rem !important;
   font-weight: 700 !important;
   font-size: 0.75rem !important;
   padding: 0.4rem 0.8rem !important;
-  box-shadow: 0 4px 12px rgba(19, 12, 46, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(10, 17, 40, 0.1) !important;
   transition: all 0.2s ease !important;
 }
 .fc-button-primary:hover {
-  background-color: #7C5CFC !important;
-  border-color: #7C5CFC !important;
-  box-shadow: 0 6px 16px rgba(124, 92, 252, 0.25) !important;
+  background-color: #2563EB !important;
+  border-color: #2563EB !important;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25) !important;
 }
 .fc-event {
   cursor: pointer;
@@ -75,13 +75,13 @@ body {
   color: #ffffff !important;
 }
 .fc-event-pending {
-  background: linear-gradient(135deg, #7C5CFC, #8B5CF6) !important;
+  background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
   color: #ffffff !important;
 }
 
-/* Modal styling - Soft Deep Violet Backdrop */
+/* Modal styling - Soft Deep Midnight Blue Backdrop */
 .modal-backdrop {
-  background-color: rgba(19, 12, 46, 0.65);
+  background-color: rgba(10, 17, 40, 0.7);
   backdrop-filter: blur(8px);
 }
 

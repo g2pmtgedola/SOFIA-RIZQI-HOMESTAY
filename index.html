@@ -28,25 +28,33 @@
         extend: {
           colors: {
             navy: {
-              50: '#FBF9FF',
-              100: '#F3EFFF',
-              200: '#E2D9FC',
-              700: '#2E2259',
-              800: '#1F1742',
-              900: '#130C2E', // Deep Nexora Night
+              50: '#F0F4F8',
+              100: '#DBEAFE',
+              200: '#BFDBFE',
+              700: '#1E293B',
+              800: '#1C2541',
+              900: '#0A1128', // Deep Midnight Blue
             },
             gold: {
-              400: '#A78BFA',
-              500: '#7C5CFC', // Nexora Signature Vivid Purple
-              600: '#6845EC',
+              400: '#F87171',
+              500: '#DC2626', // Crimson Red
+              600: '#B91C1C',
             },
-            nexora: {
-              purple: '#7C5CFC',
-              lilac: '#A78BFA',
-              light: '#EDE9FE',
-              dark: '#130C2E',
-              surface: '#FAF8FF',
-              border: '#E8E3FA',
+            royal: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+              900: '#1E3A8A',
+            },
+            crimson: {
+              50: '#FEF2F2',
+              100: '#FEE2E2',
+              500: '#EF4444',
+              600: '#DC2626',
+              700: '#B91C1C',
+              900: '#7F1D1D',
             }
           },
           fontFamily: {
@@ -57,36 +65,36 @@
     }
   </script>
 </head>
-<body class="bg-[#FAF8FF] text-slate-900 min-h-screen flex flex-col font-sans selection:bg-purple-200 selection:text-purple-900">
+<body class="bg-[#F8FAFC] text-slate-900 min-h-screen flex flex-col font-sans selection:bg-red-200 selection:text-red-900">
 
-  <!-- TOP HEADER & BRAND BAR - NEXORA MINIMALIST STYLE -->
-  <header class="bg-[#130C2E] text-white shadow-sm border-b border-purple-900/40 sticky top-0 z-40 backdrop-blur-md">
+  <!-- TOP HEADER & BRAND BAR - PREMIUM ROYAL BLUE & CRIMSON RED -->
+  <header class="bg-[#0A1128] text-white shadow-sm border-b border-blue-950/60 sticky top-0 z-40 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       
       <!-- Logo & Title -->
       <div class="flex items-center gap-3">
         <!-- Sidebar Navigation Toggle Button (Left) -->
-        <button id="btn-show-sidebar" onclick="toggleSidebarNav()" class="p-2.5 bg-white/10 hover:bg-white/15 text-[#A78BFA] rounded-2xl border border-white/10 shadow-sm transition">
+        <button id="btn-show-sidebar" onclick="toggleSidebarNav()" class="p-2.5 bg-white/10 hover:bg-white/15 text-blue-300 rounded-2xl border border-white/10 shadow-sm transition">
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
 
-        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#7C5CFC] to-[#A78BFA] text-white flex items-center justify-center font-extrabold text-sm shadow-md shadow-purple-500/20 tracking-tighter">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#2563EB] to-[#DC2626] text-white flex items-center justify-center font-extrabold text-sm shadow-md shadow-blue-900/30 tracking-tighter">
           SR
         </div>
         <div>
           <h1 class="text-base md:text-lg font-black tracking-tight text-white brand-title">SOFIA RIZQI HOMESTAY</h1>
-          <p class="text-[11px] text-[#A78BFA] font-medium flex items-center gap-1"><span>✦</span> Sistem Tempahan & Resit Rasmi</p>
+          <p class="text-[11px] text-slate-300 font-medium flex items-center gap-1"><span class="text-red-400">✦</span> Sistem Tempahan & Resit Rasmi</p>
         </div>
       </div>
 
       <!-- User Info & Auth Controls -->
       <div class="flex items-center gap-3">
         <div id="user-info-bar" class="hidden flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-2xl border border-white/15 shadow-sm">
-          <i data-lucide="user-check" class="w-4 h-4 text-[#A78BFA]"></i>
+          <i data-lucide="user-check" class="w-4 h-4 text-blue-300"></i>
           <button onclick="openUserProfileModal()" class="flex items-center gap-1.5 hover:underline text-left" title="Kemaskini Profil & Tukar Kata Laluan">
             <span id="current-user-name" class="text-xs font-semibold text-white">Pengguna</span>
-            <span id="current-user-role" class="text-[10px] bg-[#7C5CFC] text-white px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">Role</span>
-            <i data-lucide="edit-3" class="w-3.5 h-3.5 text-[#A78BFA] ml-0.5"></i>
+            <span id="current-user-role" class="text-[10px] bg-red-600 text-white px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">Role</span>
+            <i data-lucide="edit-3" class="w-3.5 h-3.5 text-blue-300 ml-0.5"></i>
           </button>
           <button onclick="logout()" title="Log Keluar" class="ml-2 text-slate-300 hover:text-red-400">
             <i data-lucide="log-out" class="w-4 h-4"></i>
@@ -94,7 +102,7 @@
         </div>
 
         <div id="auth-buttons" class="flex items-center gap-2">
-          <button onclick="showLoginMenu()" class="bg-[#7C5CFC] hover:bg-[#6845EC] text-white font-bold px-4 py-2.5 rounded-2xl text-xs flex items-center gap-1.5 shadow-md shadow-purple-500/25 transition">
+          <button onclick="showLoginMenu()" class="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-bold px-4 py-2.5 rounded-2xl text-xs flex items-center gap-1.5 shadow-md shadow-red-600/25 transition">
             <i data-lucide="log-in" class="w-4 h-4"></i> Log Masuk / Daftar
           </button>
         </div>
@@ -105,11 +113,11 @@
   <!-- MAIN WRAPPER WITH SIDEBAR NAVIGATION -->
   <div class="flex-grow max-w-[1600px] w-full mx-auto p-4 md:p-6 flex flex-col md:flex-row gap-6" id="main-container">
     
-    <!-- LEFT SIDEBAR NAVIGATION PANEL - NEXORA AESTHETIC -->
-    <aside id="sidebar-nav" class="w-full md:w-64 bg-white rounded-3xl p-5 shadow-sm border border-[#E8E3FA] shrink-0 space-y-4">
-      <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-3">
-        <h2 class="text-xs font-extrabold uppercase tracking-wider text-[#130C2E] flex items-center gap-2">
-          <i data-lucide="compass" class="w-4 h-4 text-[#7C5CFC]"></i> Menu Utama
+    <!-- LEFT SIDEBAR NAVIGATION PANEL - PREMIUM BLUE & RED -->
+    <aside id="sidebar-nav" class="w-full md:w-64 bg-white rounded-3xl p-5 shadow-sm border border-slate-200 shrink-0 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <h2 class="text-xs font-extrabold uppercase tracking-wider text-[#0A1128] flex items-center gap-2">
+          <i data-lucide="compass" class="w-4 h-4 text-blue-600"></i> Menu Utama
         </h2>
         <button onclick="toggleSidebarNav()" class="text-slate-400 hover:text-slate-600">
           <i data-lucide="x" class="w-4 h-4"></i>
@@ -117,39 +125,39 @@
       </div>
 
       <nav class="space-y-1.5">
-        <button id="tab-login-menu" onclick="switchTab('login-menu')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-[#F3EFFF] hover:text-[#7C5CFC]">
-          <i data-lucide="log-in" class="w-4 h-4 text-[#7C5CFC]"></i> Menu Log Masuk / Daftar
+        <button id="tab-login-menu" onclick="switchTab('login-menu')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-blue-50 hover:text-blue-600">
+          <i data-lucide="log-in" class="w-4 h-4 text-blue-600"></i> Menu Log Masuk / Daftar
         </button>
 
-        <button id="tab-dashboard" onclick="switchTab('dashboard')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-bold flex items-center gap-2 transition bg-[#7C5CFC] text-white shadow-md shadow-purple-500/25">
+        <button id="tab-dashboard" onclick="switchTab('dashboard')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-bold flex items-center gap-2 transition bg-blue-600 text-white shadow-md shadow-blue-500/25">
           <i data-lucide="calendar" class="w-4 h-4"></i> Kalendar Tempahan
         </button>
         
-        <button id="tab-my-bookings" onclick="switchTab('my-bookings')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-[#F3EFFF] hover:text-[#7C5CFC] hidden">
-          <i data-lucide="clock" class="w-4 h-4 text-[#7C5CFC]"></i> Tempahan Saya
+        <button id="tab-my-bookings" onclick="switchTab('my-bookings')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-blue-50 hover:text-blue-600 hidden">
+          <i data-lucide="clock" class="w-4 h-4 text-blue-600"></i> Tempahan Saya
         </button>
 
-        <button id="tab-penyewa-list" onclick="switchTab('penyewa-list')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-[#F3EFFF] hover:text-[#7C5CFC] hidden">
-          <i data-lucide="users" class="w-4 h-4 text-[#7C5CFC]"></i> Pengurusan Admin (Tempahan)
+        <button id="tab-penyewa-list" onclick="switchTab('penyewa-list')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-blue-50 hover:text-blue-600 hidden">
+          <i data-lucide="users" class="w-4 h-4 text-blue-600"></i> Pengurusan Admin (Tempahan)
         </button>
 
-        <button id="tab-users-list" onclick="switchTab('users-list')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-[#F3EFFF] hover:text-[#7C5CFC] hidden">
-          <i data-lucide="shield-check" class="w-4 h-4 text-[#7C5CFC]"></i> Pengurusan User (Admin)
+        <button id="tab-users-list" onclick="switchTab('users-list')" class="w-full text-left px-3.5 py-2.5 rounded-2xl text-xs font-semibold flex items-center gap-2 transition text-slate-600 hover:bg-blue-50 hover:text-blue-600 hidden">
+          <i data-lucide="shield-check" class="w-4 h-4 text-blue-600"></i> Pengurusan User (Admin)
         </button>
       </nav>
 
-      <hr class="border-[#F0EBFE]">
+      <hr class="border-slate-100">
 
-      <div class="bg-[#130C2E] text-white p-4 rounded-2xl space-y-2 border border-purple-900/50 shadow-sm relative overflow-hidden">
-        <div class="flex items-center gap-2 text-[#A78BFA] font-bold text-xs uppercase tracking-wide">
-          <i data-lucide="home" class="w-4 h-4 text-[#7C5CFC]"></i> Homestay Info
+      <div class="bg-gradient-to-br from-[#0A1128] via-[#111D4A] to-[#0A1128] text-white p-4 rounded-2xl space-y-2 border border-blue-900/50 shadow-sm relative overflow-hidden">
+        <div class="flex items-center gap-2 text-blue-300 font-bold text-xs uppercase tracking-wide">
+          <i data-lucide="home" class="w-4 h-4 text-red-500"></i> Homestay Info
         </div>
         <p class="text-[11px] text-slate-300">Kadar Sewa: <strong id="sidebar-rate-per-night" class="text-white">RM 350 / malam</strong></p>
         <p class="text-[11px] text-slate-300">Deposit Sekuriti: <strong id="sidebar-security-deposit" class="text-white">RM 100</strong></p>
-        <p class="text-[10px] text-[#A78BFA] flex items-center gap-1">📍 Baling, Kedah</p>
+        <p class="text-[10px] text-red-400 flex items-center gap-1 font-semibold">📍 Baling, Kedah</p>
       </div>
       
-      <button onclick="openBookingModal()" class="w-full bg-[#7C5CFC] hover:bg-[#6845EC] text-white font-bold py-3 rounded-2xl shadow-md shadow-purple-500/25 text-xs flex items-center justify-center gap-2 transition transform active:scale-95">
+      <button onclick="openBookingModal()" class="w-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-bold py-3 rounded-2xl shadow-md shadow-red-600/25 text-xs flex items-center justify-center gap-2 transition transform active:scale-95 cursor-pointer">
         <i data-lucide="plus-circle" class="w-4 h-4"></i> + Tempahan Baharu
       </button>
     </aside>
@@ -160,29 +168,29 @@
       <!-- TAB 0: SINGLE UNIFIED LOGIN / REGISTER TAB VIEW -->
       <div id="view-login-menu" class="hidden space-y-6">
         
-        <!-- TOP WELCOME BANNER FOR GUESTS -->
-        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#130C2E] via-[#1E1446] to-[#2E1668] text-white p-6 sm:p-8 shadow-xl border border-purple-500/20">
-          <div class="absolute -right-16 -top-16 w-80 h-80 bg-[#7C5CFC]/25 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute left-1/3 -bottom-20 w-80 h-80 bg-purple-900/30 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- TOP WELCOME BANNER FOR GUESTS - PREMIUM BLUE & RED -->
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0A1128] via-[#111D4A] to-[#1E293B] text-white p-6 sm:p-8 shadow-xl border border-blue-900/50">
+          <div class="absolute -right-16 -top-16 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute left-1/3 -bottom-20 w-80 h-80 bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
           
           <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div class="space-y-3 max-w-2xl">
-              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-[#C4B5FD] backdrop-blur-md border border-white/15">
-                <span class="w-2 h-2 rounded-full bg-[#7C5CFC] animate-pulse"></span>
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-blue-200 backdrop-blur-md border border-white/15">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                 <span>✦ PENGINAPAN HOMESTAY EKSKLUSIF & KESELESAAN KELUARGA</span>
               </div>
               <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white">
-                Selamat Datang ke <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A78BFA] via-[#C4B5FD] to-white brand-title">SofiaRizqi Homestay</span>
+                Selamat Datang ke <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-rose-200 to-white brand-title">SofiaRizqi Homestay</span>
               </h1>
-              <p class="text-xs sm:text-sm text-purple-200/80 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 Nikmati percutian sekeluarga yang damai dan selesa dengan fasiliti moden, persekitaran bersih, serta proses tempahan digital yang pantas dan selamat.
               </p>
               <div class="flex flex-wrap items-center gap-3 pt-1 text-xs">
                 <div class="flex items-center gap-1.5 text-amber-300 font-bold bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
                   <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-300"></i> 4.9/5 Penarafan Tetamu
                 </div>
-                <div class="flex items-center gap-1.5 text-purple-200 bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
-                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#7C5CFC]"></i> Baling, Kedah
+                <div class="flex items-center gap-1.5 text-slate-200 bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-400"></i> Baling, Kedah
                 </div>
                 <div class="flex items-center gap-1.5 text-emerald-300 bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
                   <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Resit Rasmi Automatik
@@ -193,14 +201,14 @@
             <!-- Quick Pricing Card on Banner -->
             <div class="flex sm:flex-row lg:flex-col gap-3 shrink-0">
               <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 text-center min-w-[160px]">
-                <p class="text-[10px] uppercase font-bold tracking-wider text-purple-300">Kadar Sewa Semasa</p>
+                <p class="text-[10px] uppercase font-bold tracking-wider text-blue-300">Kadar Sewa Semasa</p>
                 <p class="text-2xl font-extrabold text-white mt-0.5"><span id="login-hero-rate">RM 350</span></p>
-                <p class="text-[11px] text-purple-200/70">per malam</p>
+                <p class="text-[11px] text-blue-200/70">per malam</p>
               </div>
               <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 text-center min-w-[160px]">
-                <p class="text-[10px] uppercase font-bold tracking-wider text-purple-300">Deposit Sekuriti</p>
-                <p class="text-2xl font-extrabold text-[#A78BFA] mt-0.5"><span id="login-hero-deposit">RM 100</span></p>
-                <p class="text-[11px] text-purple-200/70">dipulangkan penuh</p>
+                <p class="text-[10px] uppercase font-bold tracking-wider text-red-300">Deposit Sekuriti</p>
+                <p class="text-2xl font-extrabold text-rose-300 mt-0.5"><span id="login-hero-deposit">RM 100</span></p>
+                <p class="text-[11px] text-red-200/70">dipulangkan penuh</p>
               </div>
             </div>
           </div>
@@ -213,19 +221,19 @@
           <div class="lg:col-span-7 space-y-6">
             
             <!-- SECTION 1: PANDUAN CARA TEMPAHAN -->
-            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-5">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0EBFE] pb-4">
+            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 shadow-sm space-y-5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
                 <div>
-                  <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-purple-100 text-[#7C5CFC] mb-1.5">
+                  <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-blue-100 text-blue-700 mb-1.5">
                     ✦ PROSES MUDAH & PANTAS
                   </div>
-                  <h3 class="text-xl font-black text-[#130C2E] tracking-tight flex items-center gap-2">
+                  <h3 class="text-xl font-black text-[#0A1128] tracking-tight flex items-center gap-2">
                     3 Langkah Mudah Menempah
                   </h3>
                   <p class="text-xs text-slate-500 font-medium">Sistem tempahan digital yang telus, selamat dan tanpa kerumitan</p>
                 </div>
-                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-[#EDE9FE] to-[#F5F3FF] text-[#7C5CFC] border border-[#DDD6FE] self-start sm:self-center">
-                  <span class="w-2 h-2 rounded-full bg-[#7C5CFC] animate-ping"></span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-blue-50 text-blue-700 border border-blue-200 self-start sm:self-center">
+                  <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
                   Pantas & Telus
                 </span>
               </div>
@@ -233,63 +241,63 @@
               <!-- 3 Stepper Cards -->
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <!-- Step 1 -->
-                <div class="bg-[#FAF8FF] hover:bg-white p-5 rounded-2xl border-2 border-[#E8E3FA] hover:border-[#7C5CFC] shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+                <div class="bg-slate-50 hover:bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-600 shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
                   <div>
                     <div class="flex items-center justify-between mb-3">
-                      <div class="w-11 h-11 rounded-2xl bg-purple-100 text-[#7C5CFC] group-hover:bg-[#7C5CFC] group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
+                      <div class="w-11 h-11 rounded-2xl bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
                         <i data-lucide="calendar" class="w-5 h-5"></i>
                       </div>
-                      <span class="text-3xl font-black text-purple-200 group-hover:text-[#7C5CFC]/40 transition duration-300">01</span>
+                      <span class="text-3xl font-black text-blue-200 group-hover:text-blue-600/30 transition duration-300">01</span>
                     </div>
-                    <span class="text-[10px] font-black uppercase tracking-wider text-[#7C5CFC] block mb-1">Langkah 1</span>
-                    <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight group-hover:text-[#7C5CFC] transition">Semak & Pilih Tarikh</h4>
+                    <span class="text-[10px] font-black uppercase tracking-wider text-blue-600 block mb-1">Langkah 1</span>
+                    <h4 class="text-sm font-extrabold text-[#0A1128] tracking-tight group-hover:text-blue-600 transition">Semak & Pilih Tarikh</h4>
                     <p class="text-xs text-slate-600 font-medium leading-relaxed mt-1.5">
                       Lihat kalendar ketersediaan untuk memilih tarikh bebas bagi percutian anda.
                     </p>
                   </div>
-                  <div class="mt-4 pt-3 border-t border-purple-100/80 flex items-center gap-1.5 text-[11px] font-bold text-[#7C5CFC]">
+                  <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-bold text-blue-600">
                     <span>Ketersediaan Langsung</span>
                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                   </div>
                 </div>
 
                 <!-- Step 2 -->
-                <div class="bg-[#FAF8FF] hover:bg-white p-5 rounded-2xl border-2 border-[#E8E3FA] hover:border-[#7C5CFC] shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+                <div class="bg-slate-50 hover:bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-indigo-600 shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
                   <div>
                     <div class="flex items-center justify-between mb-3">
-                      <div class="w-11 h-11 rounded-2xl bg-indigo-100 text-[#6366F1] group-hover:bg-[#6366F1] group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
+                      <div class="w-11 h-11 rounded-2xl bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
                         <i data-lucide="file-check-2" class="w-5 h-5"></i>
                       </div>
-                      <span class="text-3xl font-black text-indigo-200 group-hover:text-[#6366F1]/40 transition duration-300">02</span>
+                      <span class="text-3xl font-black text-indigo-200 group-hover:text-indigo-600/30 transition duration-300">02</span>
                     </div>
-                    <span class="text-[10px] font-black uppercase tracking-wider text-[#6366F1] block mb-1">Langkah 2</span>
-                    <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight group-hover:text-[#6366F1] transition">Isi Butiran & Deposit</h4>
+                    <span class="text-[10px] font-black uppercase tracking-wider text-indigo-600 block mb-1">Langkah 2</span>
+                    <h4 class="text-sm font-extrabold text-[#0A1128] tracking-tight group-hover:text-indigo-600 transition">Isi Butiran & Deposit</h4>
                     <p class="text-xs text-slate-600 font-medium leading-relaxed mt-1.5">
                       Masukkan nama penyewa dan muat naik resit bayaran deposit untuk jaminan kunci tarikh.
                     </p>
                   </div>
-                  <div class="mt-4 pt-3 border-t border-indigo-100/80 flex items-center gap-1.5 text-[11px] font-bold text-[#6366F1]">
+                  <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-bold text-indigo-600">
                     <span>Bayaran Deposit Selamat</span>
                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                   </div>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="bg-[#FAF8FF] hover:bg-white p-5 rounded-2xl border-2 border-[#E8E3FA] hover:border-emerald-500 shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+                <div class="bg-slate-50 hover:bg-white p-5 rounded-2xl border-2 border-slate-200 hover:border-red-600 shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
                   <div>
                     <div class="flex items-center justify-between mb-3">
-                      <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
+                      <div class="w-11 h-11 rounded-2xl bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
                         <i data-lucide="receipt" class="w-5 h-5"></i>
                       </div>
-                      <span class="text-3xl font-black text-emerald-200 group-hover:text-emerald-500/40 transition duration-300">03</span>
+                      <span class="text-3xl font-black text-red-200 group-hover:text-red-600/30 transition duration-300">03</span>
                     </div>
-                    <span class="text-[10px] font-black uppercase tracking-wider text-emerald-600 block mb-1">Langkah 3</span>
-                    <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight group-hover:text-emerald-600 transition">Kunci Tarikh & Resit</h4>
+                    <span class="text-[10px] font-black uppercase tracking-wider text-red-600 block mb-1">Langkah 3</span>
+                    <h4 class="text-sm font-extrabold text-[#0A1128] tracking-tight group-hover:text-red-600 transition">Kunci Tarikh & Resit</h4>
                     <p class="text-xs text-slate-600 font-medium leading-relaxed mt-1.5">
                       Tarikh anda dikunci dan sistem menjana resit rasmi digital PDF serta-merta.
                     </p>
                   </div>
-                  <div class="mt-4 pt-3 border-t border-emerald-100/80 flex items-center gap-1.5 text-[11px] font-bold text-emerald-600">
+                  <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-bold text-red-600">
                     <span>Resit Rasmi PDF</span>
                     <i data-lucide="arrow-right" class="w-3 h-3"></i>
                   </div>
@@ -297,12 +305,12 @@
               </div>
 
               <!-- Quick Trust Assurance Banner -->
-              <div class="p-3.5 rounded-2xl bg-gradient-to-r from-[#130C2E] via-[#1E1446] to-[#130C2E] text-white flex flex-col sm:flex-row items-center justify-between gap-2.5 px-4 shadow-md">
-                <div class="flex items-center gap-2.5 text-xs font-bold text-purple-200">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <div class="p-3.5 rounded-2xl bg-gradient-to-r from-[#0A1128] via-[#111D4A] to-[#0A1128] text-white flex flex-col sm:flex-row items-center justify-between gap-2.5 px-4 shadow-md">
+                <div class="flex items-center gap-2.5 text-xs font-bold text-blue-200">
+                  <span class="w-2 h-2 rounded-full bg-red-500"></span>
                   <span>Urusan Tempahan Rasmi & Dilindungi</span>
                 </div>
-                <div class="flex items-center gap-3 text-[11px] font-semibold text-purple-300">
+                <div class="flex items-center gap-3 text-[11px] font-semibold text-slate-300">
                   <span>✦ Tanpa Caj Tersembunyi</span>
                   <span>✦ Tiada Orang Tengah</span>
                 </div>
@@ -310,74 +318,74 @@
             </div>
 
             <!-- SECTION 2: KEISTIMEWAAN PENGINAPAN KAMI -->
-            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-5">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0EBFE] pb-4">
+            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 shadow-sm space-y-5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
                 <div>
-                  <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-emerald-100 text-emerald-700 mb-1.5">
+                  <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-red-100 text-red-700 mb-1.5">
                     ✦ NILAI & KESELESAAN TERJAMIN
                   </div>
-                  <h3 class="text-xl font-black text-[#130C2E] tracking-tight flex items-center gap-2">
+                  <h3 class="text-xl font-black text-[#0A1128] tracking-tight flex items-center gap-2">
                     Keistimewaan Penginapan Kami
                   </h3>
                   <p class="text-xs text-slate-500 font-medium">Komitmen kami untuk memberikan pengalaman menginap yang damai dan selesa</p>
                 </div>
-                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-emerald-50 text-emerald-700 border border-emerald-200/80 self-start sm:self-center">
-                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i> Jaminan Kualiti
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-red-50 text-red-700 border border-red-200 self-start sm:self-center">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-red-600"></i> Jaminan Kualiti
                 </span>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <!-- Card 1 -->
-                <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] hover:border-[#7C5CFC] hover:shadow-md transition duration-300 space-y-2.5">
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-600 hover:shadow-md transition duration-300 space-y-2.5">
                   <div class="flex items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7C5CFC] to-[#5B21B6] text-white flex items-center justify-center shadow-md shadow-purple-500/25">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 text-white flex items-center justify-center shadow-md shadow-red-600/25">
                       <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </div>
-                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-purple-100 text-[#7C5CFC]">✦ TERUS PEMILIK</span>
+                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-red-100 text-red-700">✦ TERUS PEMILIK</span>
                   </div>
-                  <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight">Tempahan Sah & Terus</h4>
+                  <h4 class="text-sm font-extrabold text-[#0A1128] tracking-tight">Tempahan Sah & Terus</h4>
                   <p class="text-xs text-slate-600 font-medium leading-relaxed">
                     Berurusan terus dengan pemilik homestay tanpa orang tengah, mengelakkan sebarang caj komisen atau yuran tersembunyi.
                   </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] hover:border-emerald-500 hover:shadow-md transition duration-300 space-y-2.5">
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-md transition duration-300 space-y-2.5">
                   <div class="flex items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#10B981] to-[#047857] text-white flex items-center justify-center shadow-md shadow-emerald-500/25">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center shadow-md shadow-blue-600/25">
                       <i data-lucide="sparkles" class="w-5 h-5"></i>
                     </div>
-                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700">✦ 100% SANITASI</span>
+                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700">✦ 100% SANITASI</span>
                   </div>
-                  <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight">Kebersihan Terjamin</h4>
+                  <h4 class="text-sm font-extrabold text-[#0A1128] tracking-tight">Kebersihan Terjamin</h4>
                   <p class="text-xs text-slate-600 font-medium leading-relaxed">
                     Kediaman sentiasa dibersihkan dan disanitasi secara menyeluruh sebelum ketibaan setiap tetamu untuk keselesaan keluarga.
                   </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] hover:border-amber-500 hover:shadow-md transition duration-300 space-y-2.5">
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-600 hover:shadow-md transition duration-300 space-y-2.5">
                   <div class="flex items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F59E0B] to-[#D97706] text-white flex items-center justify-center shadow-md shadow-amber-500/25">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-600 to-red-600 text-white flex items-center justify-center shadow-md shadow-amber-600/25">
                       <i data-lucide="key" class="w-5 h-5"></i>
                     </div>
                     <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-700">✦ MUDAH & PANTAS</span>
                   </div>
-                  <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight">Urusan Check-In Mudah</h4>
+                  <h4 class="text-sm font-extrabold text-[#0A1128] tracking-tight">Urusan Check-In Mudah</h4>
                   <p class="text-xs text-slate-600 font-medium leading-relaxed">
                     Panduan daftar masuk serta pautan navigasi lokasi (Waze/Google Maps) dihantar terus ke telefon anda sebelum ketibaan.
                   </p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] hover:border-indigo-500 hover:shadow-md transition duration-300 space-y-2.5">
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-600 hover:shadow-md transition duration-300 space-y-2.5">
                   <div class="flex items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6366F1] to-[#4338CA] text-white flex items-center justify-center shadow-md shadow-indigo-500/25">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white flex items-center justify-center shadow-md shadow-blue-500/25">
                       <i data-lucide="message-circle" class="w-5 h-5"></i>
                     </div>
-                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-indigo-100 text-[#6366F1]">✦ RESPON PANTAS</span>
+                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700">✦ RESPON PANTAS</span>
                   </div>
-                  <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight">Khidmat Mesra & Pantas</h4>
+                  <h4 class="text-sm font-extrabold text-[#0A1128] tracking-tight">Khidmat Mesra & Pantas</h4>
                   <p class="text-xs text-slate-600 font-medium leading-relaxed">
                     Tuan rumah sedia membantu dan memberi maklum balas pantas melalui WhatsApp sekiranya terdapat sebarang pertanyaan.
                   </p>
@@ -386,80 +394,80 @@
             </div>
 
             <!-- SECTION 2: KEMUDAHAN & FASILITI HOMESTAY -->
-            <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-4">
-              <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-3">
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div>
-                  <h3 class="text-base font-extrabold text-[#130C2E] flex items-center gap-2">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-[#7C5CFC]"></i> Kemudahan Penginapan
+                  <h3 class="text-base font-extrabold text-[#0A1128] flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-blue-600"></i> Kemudahan Penginapan
                   </h3>
                   <p class="text-xs text-slate-500">Kelengkapan disediakan untuk keselesaan sepanjang penginapan</p>
                 </div>
-                <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-purple-50 text-[#7C5CFC] border border-purple-200/60 hidden sm:inline-block">Lengkap</span>
+                <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 hidden sm:inline-block">Lengkap</span>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <!-- Kemudahan 1 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-500 transition">
+                  <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
                     <i data-lucide="wind" class="w-5 h-5"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Bilik Berhawa Dingin</h4>
+                    <h4 class="text-xs font-bold text-[#0A1128]">Bilik Berhawa Dingin</h4>
                     <p class="text-[11px] text-slate-500 mt-0.5">Bilik tidur yang selesa, bersih dan dilengkapi pendingin hawa untuk rehat yang tenang.</p>
                   </div>
                 </div>
 
                 <!-- Kemudahan 2 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-500 transition">
+                  <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center shrink-0">
                     <i data-lucide="tv" class="w-5 h-5"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Ruang Tamu & Televisyen</h4>
+                    <h4 class="text-xs font-bold text-[#0A1128]">Ruang Tamu & Televisyen</h4>
                     <p class="text-[11px] text-slate-500 mt-0.5">Ruang tamu keluarga yang luas untuk santai dan menonton rancangan televisyen bersama.</p>
                   </div>
                 </div>
 
                 <!-- Kemudahan 3 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-500 transition">
+                  <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
                     <i data-lucide="wifi" class="w-5 h-5"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Akses WiFi</h4>
+                    <h4 class="text-xs font-bold text-[#0A1128]">Akses WiFi</h4>
                     <p class="text-[11px] text-slate-500 mt-0.5">Kemudahan internet tanpa wayar untuk kegunaan peribadi atau hiburan santai.</p>
                   </div>
                 </div>
 
                 <!-- Kemudahan 4 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-500 transition">
+                  <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center shrink-0">
                     <i data-lucide="utensils" class="w-5 h-5"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Kemudahan Dapur Asas</h4>
+                    <h4 class="text-xs font-bold text-[#0A1128]">Kemudahan Dapur Asas</h4>
                     <p class="text-[11px] text-slate-500 mt-0.5">Dilengkapi peti sejuk, cerek air, penapis air dan peralatan asas minuman & hidangan.</p>
                   </div>
                 </div>
 
                 <!-- Kemudahan 5 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-500 transition">
+                  <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
                     <i data-lucide="car" class="w-5 h-5"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Ruang Parkir Kenderaan</h4>
+                    <h4 class="text-xs font-bold text-[#0A1128]">Ruang Parkir Kenderaan</h4>
                     <p class="text-[11px] text-slate-500 mt-0.5">Kawasan meletak kereta berpagar yang selamat, mudah dan berdekatan pintu masuk.</p>
                   </div>
                 </div>
 
                 <!-- Kemudahan 6 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 transition">
+                  <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
                     <i data-lucide="shield-check" class="w-5 h-5"></i>
                   </div>
                   <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Persekitaran Tenang & Bersih</h4>
+                    <h4 class="text-xs font-bold text-[#0A1128]">Persekitaran Tenang & Bersih</h4>
                     <p class="text-[11px] text-slate-500 mt-0.5">Suasana kediaman yang damai, bersih dan privasi keluarga terjamin.</p>
                   </div>
                 </div>
@@ -468,45 +476,45 @@
 
             <!-- SECTION 3: POLISI & WAKTU CHECK-IN / CHECK-OUT -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div class="bg-white p-4 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+              <div class="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
                   <i data-lucide="log-in" class="w-5 h-5"></i>
                 </div>
                 <div>
                   <p class="text-[10px] uppercase font-bold text-slate-400">Daftar Masuk (Check-In)</p>
-                  <p class="text-sm font-extrabold text-[#130C2E]">3:00 Petang</p>
-                  <p class="text-[10px] text-emerald-600 font-semibold">Self check-in mudah</p>
+                  <p class="text-sm font-extrabold text-[#0A1128]">3:00 Petang</p>
+                  <p class="text-[10px] text-blue-600 font-semibold">Self check-in mudah</p>
                 </div>
               </div>
 
-              <div class="bg-white p-4 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center gap-3">
+              <div class="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex items-center gap-3">
                 <div class="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
                   <i data-lucide="log-out" class="w-5 h-5"></i>
                 </div>
                 <div>
                   <p class="text-[10px] uppercase font-bold text-slate-400">Daftar Keluar (Check-Out)</p>
-                  <p class="text-sm font-extrabold text-[#130C2E]">12:00 T/Hari</p>
+                  <p class="text-sm font-extrabold text-[#0A1128]">12:00 T/Hari</p>
                   <p class="text-[10px] text-slate-500">Masa pembersihan</p>
                 </div>
               </div>
 
-              <div class="bg-white p-4 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-purple-50 text-[#7C5CFC] flex items-center justify-center shrink-0">
+              <div class="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0">
                   <i data-lucide="shield-alert" class="w-5 h-5"></i>
                 </div>
                 <div>
                   <p class="text-[10px] uppercase font-bold text-slate-400">Deposit Jaminan</p>
-                  <p class="text-sm font-extrabold text-[#130C2E]">RM 100</p>
-                  <p class="text-[10px] text-purple-600 font-semibold">Dipulangkan penuh</p>
+                  <p class="text-sm font-extrabold text-[#0A1128]">RM 100</p>
+                  <p class="text-[10px] text-red-600 font-semibold">Dipulangkan penuh</p>
                 </div>
               </div>
             </div>
 
             <!-- SECTION 4: TESTIMONI TETAMU / ULASAN -->
-            <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
-              <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-2">
-                <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-1.5">
-                  <i data-lucide="message-square" class="w-4 h-4 text-[#7C5CFC]"></i> Apa Kata Tetamu Kami
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <h4 class="text-xs font-extrabold text-[#0A1128] uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="message-square" class="w-4 h-4 text-blue-600"></i> Apa Kata Tetamu Kami
                 </h4>
                 <div class="flex items-center gap-1 text-amber-400 text-xs">
                   <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
@@ -518,19 +526,19 @@
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2">
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                   <p class="text-xs text-slate-700 italic">"Homestay sangat bersih, teratur dan selesa. Kemudahan yang disediakan mencukupi dan persekitaran sangat tenang untuk kami sekeluarga."</p>
-                  <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pt-1 border-t border-purple-100">
-                    <span class="text-[#130C2E]">Pn. Salmiah</span>
-                    <span class="text-[#7C5CFC]">Tetamu Keluarga</span>
+                  <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pt-1 border-t border-slate-200">
+                    <span class="text-[#0A1128]">Pn. Salmiah</span>
+                    <span class="text-blue-600">Tetamu Keluarga</span>
                   </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2">
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
                   <p class="text-xs text-slate-700 italic">"Layanan tuan rumah terbaik dan sangat mesra. Urusan tempahan mudah dan proses daftar masuk sangat lancar. Sangat berpuas hati!"</p>
-                  <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pt-1 border-t border-purple-100">
-                    <span class="text-[#130C2E]">En. Haziq</span>
-                    <span class="text-[#7C5CFC]">Tetamu Rombongan</span>
+                  <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pt-1 border-t border-slate-200">
+                    <span class="text-[#0A1128]">En. Haziq</span>
+                    <span class="text-red-600">Tetamu Rombongan</span>
                   </div>
                 </div>
               </div>
@@ -541,22 +549,22 @@
           <!-- RIGHT 5 COLS: UNIFIED AUTH PORTAL CARD -->
           <div class="lg:col-span-5 space-y-4">
             
-            <div class="bg-white p-6 sm:p-7 rounded-3xl shadow-lg border border-[#E8E3FA] space-y-5">
+            <div class="bg-white p-6 sm:p-7 rounded-3xl shadow-lg border border-slate-200 space-y-5">
               
               <div class="text-center space-y-1.5">
-                <div class="w-14 h-14 rounded-2xl border-2 border-[#7C5CFC]/40 bg-[#130C2E] text-white flex items-center justify-center font-bold text-base mx-auto shadow-md shadow-purple-900/20">
-                  <span class="text-[#A78BFA] font-serif font-extrabold">SR</span>
+                <div class="w-14 h-14 rounded-2xl border-2 border-red-500 bg-[#0A1128] text-white flex items-center justify-center font-bold text-base mx-auto shadow-md shadow-blue-950/30">
+                  <span class="text-red-500 font-serif font-extrabold">SR</span>
                 </div>
-                <h2 class="text-lg font-extrabold text-[#130C2E] brand-title">Portal Tetamu SofiaRizqi</h2>
+                <h2 class="text-lg font-extrabold text-[#0A1128] brand-title">Portal Tetamu SofiaRizqi</h2>
                 <p class="text-xs text-slate-500">Log Masuk untuk semak tempahan atau Daftar akaun baharu</p>
               </div>
 
               <!-- Toggle Buttons -->
-              <div class="flex bg-[#F3EFFF] p-1.5 rounded-2xl border border-[#E8E3FA]">
-                <button id="single-auth-btn-login" onclick="toggleSingleAuthMode('login')" class="flex-1 py-2.5 text-xs font-bold rounded-xl transition bg-white text-[#130C2E] shadow-sm">
+              <div class="flex bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+                <button id="single-auth-btn-login" onclick="toggleSingleAuthMode('login')" class="flex-1 py-2.5 text-xs font-bold rounded-xl transition bg-white text-[#0A1128] shadow-sm">
                   Log Masuk Akaun
                 </button>
-                <button id="single-auth-btn-reg" onclick="toggleSingleAuthMode('reg')" class="flex-1 py-2.5 text-xs font-bold rounded-xl transition text-slate-600 hover:text-[#130C2E]">
+                <button id="single-auth-btn-reg" onclick="toggleSingleAuthMode('reg')" class="flex-1 py-2.5 text-xs font-bold rounded-xl transition text-slate-600 hover:text-[#0A1128]">
                   Daftar Akaun Baharu
                 </button>
               </div>
@@ -564,14 +572,14 @@
               <!-- Form Log Masuk -->
               <form id="single-form-login" onsubmit="handleSingleLoginSubmit(event)" autocomplete="off" class="space-y-3.5">
                 <div>
-                  <label class="block text-xs font-bold text-[#130C2E] mb-1">No. Telefon ATAU ID Pengguna <span class="text-red-500">*</span></label>
-                  <input type="text" id="single-login-id" required autocomplete="off" value="" placeholder="Cth: 0192298176 atau admin" class="w-full px-3.5 py-3 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                  <label class="block text-xs font-bold text-[#0A1128] mb-1">No. Telefon ATAU ID Pengguna <span class="text-red-500">*</span></label>
+                  <input type="text" id="single-login-id" required autocomplete="off" value="" placeholder="Cth: 0192298176 atau admin" class="w-full px-3.5 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none transition">
                 </div>
                 <div>
-                  <label class="block text-xs font-bold text-[#130C2E] mb-1">Kata Laluan <span class="text-red-500">*</span></label>
-                  <input type="password" id="single-login-password" required autocomplete="new-password" value="" placeholder="••••••••" class="w-full px-3.5 py-3 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                  <label class="block text-xs font-bold text-[#0A1128] mb-1">Kata Laluan <span class="text-red-500">*</span></label>
+                  <input type="password" id="single-login-password" required autocomplete="new-password" value="" placeholder="••••••••" class="w-full px-3.5 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none transition">
                 </div>
-                <button type="submit" class="w-full bg-[#7C5CFC] hover:bg-[#6845EC] text-white font-bold py-3.5 rounded-2xl text-xs shadow-md shadow-purple-500/25 transition transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+                <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-bold py-3.5 rounded-2xl text-xs shadow-md shadow-red-600/25 transition transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
                   <i data-lucide="log-in" class="w-4 h-4"></i> Log Masuk Sekarang
                 </button>
               </form>
@@ -579,45 +587,45 @@
               <!-- Form Daftar Akaun Baharu -->
               <form id="single-form-reg" onsubmit="handleSingleRegisterSubmit(event)" class="space-y-3 hidden">
                 <div>
-                  <label class="block text-xs font-bold text-[#130C2E] mb-1">Nama Penuh <span class="text-red-500">*</span></label>
-                  <input type="text" id="single-reg-name" required placeholder="Nama penuh anda" class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                  <label class="block text-xs font-bold text-[#0A1128] mb-1">Nama Penuh <span class="text-red-500">*</span></label>
+                  <input type="text" id="single-reg-name" required placeholder="Nama penuh anda" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none transition">
                 </div>
                 <div class="grid grid-cols-2 gap-2">
                   <div>
-                    <label class="block text-xs font-bold text-[#130C2E] mb-1">No. Telefon <span class="text-red-500">*</span></label>
-                    <input type="tel" id="single-reg-phone" required placeholder="019-XXXXXXX" class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                    <label class="block text-xs font-bold text-[#0A1128] mb-1">No. Telefon <span class="text-red-500">*</span></label>
+                    <input type="tel" id="single-reg-phone" required placeholder="019-XXXXXXX" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none transition">
                   </div>
                   <div>
-                    <label class="block text-xs font-bold text-[#130C2E] mb-1">No. KP (KTP/IC)</label>
-                    <input type="text" id="single-reg-ic" placeholder="Kad Pengenalan" class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                    <label class="block text-xs font-bold text-[#0A1128] mb-1">No. KP (KTP/IC)</label>
+                    <input type="text" id="single-reg-ic" placeholder="Kad Pengenalan" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none transition">
                   </div>
                 </div>
                 <div>
-                  <label class="block text-xs font-bold text-[#130C2E] mb-1">Alamat Kediaman</label>
-                  <input type="text" id="single-reg-address" placeholder="Alamat penuh anda..." class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                  <label class="block text-xs font-bold text-[#0A1128] mb-1">Alamat Kediaman</label>
+                  <input type="text" id="single-reg-address" placeholder="Alamat penuh anda..." class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none transition">
                 </div>
                 <div>
-                  <label class="block text-xs font-bold text-[#130C2E] mb-1">Cipta Kata Laluan <span class="text-red-500">*</span></label>
-                  <input type="password" id="single-reg-password" required placeholder="••••••••" class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                  <label class="block text-xs font-bold text-[#0A1128] mb-1">Cipta Kata Laluan <span class="text-red-500">*</span></label>
+                  <input type="password" id="single-reg-password" required placeholder="••••••••" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:bg-white focus:outline-none transition">
                 </div>
                 <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl text-xs shadow-md shadow-emerald-500/25 transition transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
                   <i data-lucide="user-plus" class="w-4 h-4"></i> Daftar Akaun Baharu
                 </button>
               </form>
 
-              <div class="pt-2 border-t border-[#F0EBFE] flex items-center justify-center gap-2 text-[11px] text-slate-500">
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-center gap-2 text-[11px] text-slate-500">
                 <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i> Sistem Keselamatan & Privasi Terjamin
               </div>
             </div>
 
             <!-- Quick WhatsApp Assistance Card -->
-            <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between gap-3">
+            <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex items-center justify-between gap-3">
               <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
                   <i data-lucide="phone-call" class="w-5 h-5"></i>
                 </div>
                 <div>
-                  <h4 class="text-xs font-bold text-[#130C2E]">Perlukan Bantuan Segera?</h4>
+                  <h4 class="text-xs font-bold text-[#0A1128]">Perlukan Bantuan Segera?</h4>
                   <p class="text-[11px] text-slate-500">Hubungi terus Tuan Rumah melalui WhatsApp</p>
                 </div>
               </div>
@@ -632,32 +640,38 @@
 
       </div>
 
+          </div>
+
+        </div>
+
+      </div>
+
       <!-- TAB 1: DASHBOARD & MAIN CALENDAR VIEW -->
       <div id="view-dashboard" class="space-y-6">
         
-        <!-- NEXORA HERO SHOWCASE CARD -->
-        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#130C2E] via-[#1E1446] to-[#2E1668] text-white p-6 sm:p-8 shadow-xl border border-purple-500/20">
+        <!-- HERO SHOWCASE CARD - PREMIUM BLUE & RED -->
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0A1128] via-[#111D4A] to-[#1E293B] text-white p-6 sm:p-8 shadow-xl border border-blue-900/50">
           <!-- Background Ambient Glow -->
-          <div class="absolute -right-16 -top-16 w-72 h-72 bg-[#7C5CFC]/25 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute left-1/3 -bottom-20 w-80 h-80 bg-purple-900/30 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -right-16 -top-16 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute left-1/3 -bottom-20 w-80 h-80 bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
 
           <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div class="space-y-3 max-w-xl">
-              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-[#C4B5FD] backdrop-blur-md border border-white/15 tracking-wide">
-                <span class="w-2 h-2 rounded-full bg-[#7C5CFC] animate-pulse"></span>
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-blue-200 backdrop-blur-md border border-white/15 tracking-wide">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                 <span>✦ PENGINAPAN PREMIUM & KESELESAAN SEJATI</span>
               </div>
               <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight text-white">
-                Define Your Stay, <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A78BFA] via-[#C4B5FD] to-white">Own Your Comfort</span>
+                Define Your Stay, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-rose-200 to-white">Own Your Comfort</span>
               </h2>
-              <p class="text-xs sm:text-sm text-purple-200/80 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 Pengalaman percutian dan penginapan keluarga yang serba moden, tenang, dan selesa. Semak ketersediaan tarikh anda sekarang.
               </p>
               <div class="flex flex-wrap items-center gap-3 pt-1">
-                <button onclick="openBookingModal()" class="px-5 py-2.5 rounded-full bg-[#7C5CFC] hover:bg-[#6845EC] text-white font-bold text-xs shadow-lg shadow-purple-600/30 transition transform active:scale-95 flex items-center gap-2 cursor-pointer">
+                <button onclick="openBookingModal()" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white font-bold text-xs shadow-lg shadow-red-600/30 transition transform active:scale-95 flex items-center gap-2 cursor-pointer">
                   <i data-lucide="plus-circle" class="w-4 h-4"></i> Tempah Penginapan Sekarang
                 </button>
-                <div class="flex items-center gap-2 text-[11px] font-semibold text-purple-200/90 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+                <div class="flex items-center gap-2 text-[11px] font-semibold text-slate-200 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
                   <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Pengesahan Rasmi Pantas
                 </div>
               </div>
@@ -665,15 +679,15 @@
 
             <!-- Quick Info Badge Grid -->
             <div class="grid grid-cols-2 gap-3 w-full md:w-auto">
-              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 text-center">
-                <p class="text-[10px] uppercase tracking-wider text-purple-300 font-bold">Kadar Sewa</p>
+              <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-3.5 text-center">
+                <p class="text-[10px] uppercase tracking-wider text-blue-300 font-bold">Kadar Sewa</p>
                 <p class="text-lg font-extrabold text-white mt-0.5"><span id="hero-rate-per-night">RM 350</span></p>
-                <p class="text-[10px] text-purple-300/70">per malam</p>
+                <p class="text-[10px] text-blue-200/70">per malam</p>
               </div>
-              <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 text-center">
-                <p class="text-[10px] uppercase tracking-wider text-purple-300 font-bold">Deposit Sekuriti</p>
-                <p class="text-lg font-extrabold text-[#A78BFA] mt-0.5"><span id="hero-security-deposit">RM 100</span></p>
-                <p class="text-[10px] text-purple-300/70">dipulangkan</p>
+              <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-3.5 text-center">
+                <p class="text-[10px] uppercase tracking-wider text-red-300 font-bold">Deposit Sekuriti</p>
+                <p class="text-lg font-extrabold text-rose-300 mt-0.5"><span id="hero-security-deposit">RM 100</span></p>
+                <p class="text-[10px] text-red-200/70">dipulangkan</p>
               </div>
             </div>
           </div>
@@ -681,16 +695,16 @@
 
         <!-- ADMIN ONLY OVERVIEW STATS CARDS -->
         <div id="stats-overview-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 hidden">
-          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between">
+          <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex items-center justify-between">
             <div>
               <p class="text-xs text-slate-500 font-semibold">Jumlah Tempahan</p>
-              <h3 id="stat-total" class="text-2xl font-extrabold text-[#130C2E] mt-1">0</h3>
+              <h3 id="stat-total" class="text-2xl font-extrabold text-[#0A1128] mt-1">0</h3>
             </div>
-            <div class="w-12 h-12 rounded-2xl bg-purple-50 text-[#7C5CFC] flex items-center justify-center">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
               <i data-lucide="calendar" class="w-6 h-6"></i>
             </div>
           </div>
-          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between">
+          <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex items-center justify-between">
             <div>
               <p class="text-xs text-slate-500 font-semibold">Disahkan</p>
               <h3 id="stat-confirmed" class="text-2xl font-extrabold text-emerald-600 mt-1">0</h3>
@@ -699,7 +713,7 @@
               <i data-lucide="check-circle" class="w-6 h-6"></i>
             </div>
           </div>
-          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between">
+          <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex items-center justify-between">
             <div>
               <p class="text-xs text-slate-500 font-semibold">Menunggu Pengesahan</p>
               <h3 id="stat-pending" class="text-2xl font-extrabold text-amber-600 mt-1">0</h3>
@@ -708,30 +722,30 @@
               <i data-lucide="clock" class="w-6 h-6"></i>
             </div>
           </div>
-          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between">
+          <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex items-center justify-between">
             <div>
               <p class="text-xs text-slate-500 font-semibold">Jumlah Hasil</p>
-              <h3 id="stat-revenue" class="text-2xl font-extrabold text-[#130C2E] mt-1">RM 0</h3>
+              <h3 id="stat-revenue" class="text-2xl font-extrabold text-[#0A1128] mt-1">RM 0</h3>
             </div>
-            <div class="w-12 h-12 rounded-2xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center">
+            <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center">
               <i data-lucide="dollar-sign" class="w-6 h-6"></i>
             </div>
           </div>
         </div>
 
         <!-- MAIN CALENDAR CONTAINER -->
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-[#E8E3FA] space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0EBFE] pb-4">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
             <div>
-              <h3 class="text-lg font-bold text-[#130C2E] flex items-center gap-2">
-                <i data-lucide="calendar-days" class="w-5 h-5 text-[#7C5CFC]"></i> Kalendar Penginapan & Ketersediaan
+              <h3 class="text-lg font-bold text-[#0A1128] flex items-center gap-2">
+                <i data-lucide="calendar-days" class="w-5 h-5 text-blue-600"></i> Kalendar Penginapan & Ketersediaan
               </h3>
               <p class="text-xs text-slate-500">Tarikh diwarnakan merah telah ditempah & dikunci.</p>
             </div>
             <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-semibold">
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span> Tarikh Bebas</span>
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200/60"><span class="w-2 h-2 rounded-full bg-rose-500 inline-block"></span> Disahkan (Ditempah)</span>
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200/60"><span class="w-2 h-2 rounded-full bg-[#7C5CFC] inline-block"></span> Menunggu</span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200/60"><span class="w-2 h-2 rounded-full bg-blue-600 inline-block"></span> Menunggu</span>
             </div>
           </div>
 
@@ -742,9 +756,9 @@
         <!-- HOMESTAY HIGHLIGHTS & HOUSE RULES GRID -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
           <!-- Card 1: Peraturan Homestay (House Rules) -->
-          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
-            <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-2">
-              <i data-lucide="book-open" class="w-4 h-4 text-[#7C5CFC]"></i> Peraturan Rumah (House Rules)
+          <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+            <h4 class="text-xs font-extrabold text-[#0A1128] uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-red-500"></i> Peraturan Rumah (House Rules)
             </h4>
             <ul class="space-y-2 text-xs text-slate-600">
               <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Makanan & minuman halal sahaja</li>
@@ -755,28 +769,28 @@
           </div>
 
           <!-- Card 2: Lokasi & Tarikan Berdekatan -->
-          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
-            <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-2">
-              <i data-lucide="map-pin" class="w-4 h-4 text-[#7C5CFC]"></i> Lokasi & Tarikan Sekitar
+          <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+            <h4 class="text-xs font-extrabold text-[#0A1128] uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-blue-600"></i> Lokasi & Tarikan Sekitar
             </h4>
             <p class="text-xs text-slate-600 leading-relaxed">
               Lokasi strategik di Baling, Kedah. Berdekatan dengan kedai makan tempatan yang popular, pasar mini, stesen minyak, dan laluan utama.
             </p>
             <div class="pt-1 flex items-center gap-2">
-              <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#7C5CFC] bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200/50">
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
                 <i data-lucide="navigation" class="w-3 h-3"></i> Akses Mudah & Tenang
               </span>
             </div>
           </div>
 
           <!-- Card 3: Polisi Tempahan & Deposit -->
-          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
-            <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-2">
+          <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+            <h4 class="text-xs font-extrabold text-[#0A1128] uppercase tracking-wider flex items-center gap-2">
               <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> Polisi Tempahan & Jaminan
             </h4>
             <ul class="space-y-2 text-xs text-slate-600">
-              <li class="flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-[#7C5CFC] shrink-0"></i> Check-in 3:00 PM | Check-out 12:00 PM</li>
-              <li class="flex items-center gap-2"><i data-lucide="credit-card" class="w-3.5 h-3.5 text-[#7C5CFC] shrink-0"></i> Deposit RM 100 untuk mengunci tarikh</li>
+              <li class="flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i> Check-in 3:00 PM | Check-out 12:00 PM</li>
+              <li class="flex items-center gap-2"><i data-lucide="credit-card" class="w-3.5 h-3.5 text-red-500 shrink-0"></i> Deposit RM 100 untuk mengunci tarikh</li>
               <li class="flex items-center gap-2"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Deposit dipulangkan dalam tempoh 24 jam</li>
             </ul>
           </div>
