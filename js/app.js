@@ -321,6 +321,8 @@ function updatePricingUI() {
   const sidebarDeposit = document.getElementById('sidebar-security-deposit');
   const heroRate = document.getElementById('hero-rate-per-night');
   const heroDeposit = document.getElementById('hero-security-deposit');
+  const loginHeroRate = document.getElementById('login-hero-rate');
+  const loginHeroDeposit = document.getElementById('login-hero-deposit');
   const inputRate = document.getElementById('setting-rate-per-night');
   const inputDeposit = document.getElementById('setting-security-deposit');
 
@@ -328,6 +330,8 @@ function updatePricingUI() {
   if (sidebarDeposit) sidebarDeposit.innerText = `RM ${currentSettings.securityDeposit}`;
   if (heroRate) heroRate.innerText = `RM ${currentSettings.ratePerNight}`;
   if (heroDeposit) heroDeposit.innerText = `RM ${currentSettings.securityDeposit}`;
+  if (loginHeroRate) loginHeroRate.innerText = `RM ${currentSettings.ratePerNight}`;
+  if (loginHeroDeposit) loginHeroDeposit.innerText = `RM ${currentSettings.securityDeposit}`;
   if (inputRate && document.activeElement !== inputRate) inputRate.value = currentSettings.ratePerNight;
   if (inputDeposit && document.activeElement !== inputDeposit) inputDeposit.value = currentSettings.securityDeposit;
 

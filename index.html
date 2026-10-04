@@ -103,7 +103,7 @@
   </header>
 
   <!-- MAIN WRAPPER WITH SIDEBAR NAVIGATION -->
-  <div class="flex-grow max-w-7xl w-full mx-auto p-4 md:p-6 flex flex-col md:flex-row gap-6" id="main-container">
+  <div class="flex-grow max-w-[1600px] w-full mx-auto p-4 md:p-6 flex flex-col md:flex-row gap-6" id="main-container">
     
     <!-- LEFT SIDEBAR NAVIGATION PANEL - NEXORA AESTHETIC -->
     <aside id="sidebar-nav" class="w-full md:w-64 bg-white rounded-3xl p-5 shadow-sm border border-[#E8E3FA] shrink-0 space-y-4">
@@ -158,72 +158,305 @@
     <main class="flex-grow space-y-6">
 
       <!-- TAB 0: SINGLE UNIFIED LOGIN / REGISTER TAB VIEW -->
-      <div id="view-login-menu" class="hidden space-y-4">
-        <div class="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-md border border-slate-200 space-y-5">
+      <div id="view-login-menu" class="hidden space-y-6">
+        
+        <!-- TOP WELCOME BANNER FOR GUESTS -->
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#130C2E] via-[#1E1446] to-[#2E1668] text-white p-6 sm:p-8 shadow-xl border border-purple-500/20">
+          <div class="absolute -right-16 -top-16 w-80 h-80 bg-[#7C5CFC]/25 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute left-1/3 -bottom-20 w-80 h-80 bg-purple-900/30 rounded-full blur-3xl pointer-events-none"></div>
           
-          <div class="text-center space-y-1">
-            <div class="w-12 h-12 rounded-full border-2 border-gold-500 bg-navy-900 text-white flex items-center justify-center font-bold text-sm mx-auto shadow">
-              <span class="text-gold-500 font-serif">SR</span>
-            </div>
-            <h2 class="text-lg font-bold text-navy-900 brand-title">Selamat Datang ke SofiaRizqi</h2>
-            <p class="text-xs text-slate-500">Sila pilih Log Masuk atau Daftar Akaun Baharu</p>
-          </div>
-
-          <!-- Single Toggle Buttons -->
-          <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
-            <button id="single-auth-btn-login" onclick="toggleSingleAuthMode('login')" class="flex-1 py-2 text-xs font-bold rounded-lg transition bg-white text-navy-900 shadow">
-              Log Masuk Akaun
-            </button>
-            <button id="single-auth-btn-reg" onclick="toggleSingleAuthMode('reg')" class="flex-1 py-2 text-xs font-bold rounded-lg transition text-slate-600">
-              Daftar Akaun Baharu
-            </button>
-          </div>
-
-          <!-- Single Form: Log Masuk -->
-          <form id="single-form-login" onsubmit="handleSingleLoginSubmit(event)" autocomplete="off" class="space-y-3">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">No. Telefon ATAU ID Pengguna <span class="text-red-500">*</span></label>
-              <input type="text" id="single-login-id" required autocomplete="off" value="" placeholder="Cth: 0192298176 atau admin" class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-navy-900 focus:outline-none">
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">Kata Laluan <span class="text-red-500">*</span></label>
-              <input type="password" id="single-login-password" required autocomplete="new-password" value="" placeholder="••••••••" class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-navy-900 focus:outline-none">
-            </div>
-            <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-gold-500 font-bold py-3 rounded-xl text-xs shadow-md transition flex items-center justify-center gap-2">
-              <i data-lucide="log-in" class="w-4 h-4"></i> Log Masuk Sekarang
-            </button>
-          </form>
-
-          <!-- Single Form: Daftar Akaun Baharu -->
-          <form id="single-form-reg" onsubmit="handleSingleRegisterSubmit(event)" class="space-y-3 hidden">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">Nama Penuh <span class="text-red-500">*</span></label>
-              <input type="text" id="single-reg-name" required placeholder="Nama penuh anda" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-navy-900 focus:outline-none">
-            </div>
-            <div class="grid grid-cols-2 gap-2">
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1">No. Telefon <span class="text-red-500">*</span></label>
-                <input type="tel" id="single-reg-phone" required placeholder="019-XXXXXXX" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-navy-900 focus:outline-none">
+          <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div class="space-y-3 max-w-2xl">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-[#C4B5FD] backdrop-blur-md border border-white/15">
+                <span class="w-2 h-2 rounded-full bg-[#7C5CFC] animate-pulse"></span>
+                <span>✦ PENGINAPAN HOMESTAY EKSKLUSIF & KESELESAAN KELUARGA</span>
               </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1">No. KP (KTP/IC)</label>
-                <input type="text" id="single-reg-ic" placeholder="Kad Pengenalan" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-navy-900 focus:outline-none">
+              <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white">
+                Selamat Datang ke <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#A78BFA] via-[#C4B5FD] to-white brand-title">SofiaRizqi Homestay</span>
+              </h1>
+              <p class="text-xs sm:text-sm text-purple-200/80 leading-relaxed">
+                Nikmati percutian sekeluarga yang damai dan selesa dengan fasiliti moden, persekitaran bersih, serta proses tempahan digital yang pantas dan selamat.
+              </p>
+              <div class="flex flex-wrap items-center gap-3 pt-1 text-xs">
+                <div class="flex items-center gap-1.5 text-amber-300 font-bold bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-300"></i> 4.9/5 Penarafan Tetamu
+                </div>
+                <div class="flex items-center gap-1.5 text-purple-200 bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#7C5CFC]"></i> Baling, Kedah
+                </div>
+                <div class="flex items-center gap-1.5 text-emerald-300 bg-white/10 px-3 py-1.5 rounded-full border border-white/10">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Resit Rasmi Automatik
+                </div>
               </div>
             </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">Alamat Kediaman</label>
-              <input type="text" id="single-reg-address" placeholder="Alamat penuh..." class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-navy-900 focus:outline-none">
+
+            <!-- Quick Pricing Card on Banner -->
+            <div class="flex sm:flex-row lg:flex-col gap-3 shrink-0">
+              <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 text-center min-w-[160px]">
+                <p class="text-[10px] uppercase font-bold tracking-wider text-purple-300">Kadar Sewa Semasa</p>
+                <p class="text-2xl font-extrabold text-white mt-0.5"><span id="login-hero-rate">RM 350</span></p>
+                <p class="text-[11px] text-purple-200/70">per malam</p>
+              </div>
+              <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 text-center min-w-[160px]">
+                <p class="text-[10px] uppercase font-bold tracking-wider text-purple-300">Deposit Sekuriti</p>
+                <p class="text-2xl font-extrabold text-[#A78BFA] mt-0.5"><span id="login-hero-deposit">RM 100</span></p>
+                <p class="text-[11px] text-purple-200/70">dipulangkan penuh</p>
+              </div>
             </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">Cipta Kata Laluan <span class="text-red-500">*</span></label>
-              <input type="password" id="single-reg-password" required placeholder="••••••••" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-navy-900 focus:outline-none">
+          </div>
+        </div>
+
+        <!-- 2-COLUMN MAIN CONTENT: HOMESTAY DETAILS & LOGIN PORTAL -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- LEFT 7 COLS: HOMESTAY AMENITIES, HOUSE RULES & TESTIMONIALS -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- SECTION 1: KEMUDAHAN & FASILITI HOMESTAY -->
+            <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-4">
+              <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-3">
+                <div>
+                  <h3 class="text-base font-extrabold text-[#130C2E] flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-[#7C5CFC]"></i> Kemudahan & Fasiliti Homestay
+                  </h3>
+                  <p class="text-xs text-slate-500">Disediakan khas untuk menjamin keselesaan anda dan sekeluarga</p>
+                </div>
+                <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-purple-50 text-[#7C5CFC] border border-purple-200/60 hidden sm:inline-block">Serba Lengkap</span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- Amenity 1 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="wind" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Bilik Berhawa Dingin Penuh</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Semua bilik tidur dilengkapi pendingin hawa dan kipas untuk tidur yang lena.</p>
+                  </div>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="waves" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Kolam Santai Peribadi</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Ruang mandian kolam santai yang bersih dan selamat untuk anak-anak bermain.</p>
+                  </div>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="wifi" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">WiFi Pantas & Smart TV</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Sambungan internet laju percuma, akses YouTube dan saluran siaran hiburan.</p>
+                  </div>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="utensils" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Dapur Lengkap & Penapis Air</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Peti sejuk, cerek elektrik, penapis air Coway, mikrogelombang & perkakas asas.</p>
+                  </div>
+                </div>
+
+                <!-- Amenity 5 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="car" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Parkir Luas Berpagar</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Ruang porch yang luas dan selamat, boleh memuatkan sehingga 3 - 4 kenderaan.</p>
+                  </div>
+                </div>
+
+                <!-- Amenity 6 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="flame" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Peralatan BBQ & Patio</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Set BBQ dan ruang santai luar rumah untuk jamuan malam bersama keluarga.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-xs shadow-md transition flex items-center justify-center gap-2">
-              <i data-lucide="user-plus" class="w-4 h-4"></i> Daftar Akaun Baharu
-            </button>
-          </form>
+
+            <!-- SECTION 2: POLISI & WAKTU CHECK-IN / CHECK-OUT -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="bg-white p-4 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                  <i data-lucide="log-in" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <p class="text-[10px] uppercase font-bold text-slate-400">Daftar Masuk (Check-In)</p>
+                  <p class="text-sm font-extrabold text-[#130C2E]">3:00 Petang</p>
+                  <p class="text-[10px] text-emerald-600 font-semibold">Self check-in mudah</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-4 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
+                  <i data-lucide="log-out" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <p class="text-[10px] uppercase font-bold text-slate-400">Daftar Keluar (Check-Out)</p>
+                  <p class="text-sm font-extrabold text-[#130C2E]">12:00 T/Hari</p>
+                  <p class="text-[10px] text-slate-500">Masa pembersihan</p>
+                </div>
+              </div>
+
+              <div class="bg-white p-4 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-purple-50 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                  <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <p class="text-[10px] uppercase font-bold text-slate-400">Deposit Jaminan</p>
+                  <p class="text-sm font-extrabold text-[#130C2E]">RM 100</p>
+                  <p class="text-[10px] text-purple-600 font-semibold">Dipulangkan penuh</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 3: TESTIMONI TETAMU / ULASAN -->
+            <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
+              <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-2">
+                <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-1.5">
+                  <i data-lucide="message-square" class="w-4 h-4 text-[#7C5CFC]"></i> Apa Kata Tetamu Kami
+                </h4>
+                <div class="flex items-center gap-1 text-amber-400 text-xs">
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2">
+                  <p class="text-xs text-slate-700 italic">"Homestay sangat luas, bersih dan cantik! Dapur lengkap sangat mudah nak masak untuk famili besar 10 orang. Kolam santai anak-anak paling suka."</p>
+                  <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pt-1 border-t border-purple-100">
+                    <span class="text-[#130C2E]">Pn. Salmiah</span>
+                    <span class="text-[#7C5CFC]">Kuala Lumpur</span>
+                  </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2">
+                  <p class="text-xs text-slate-700 italic">"Layanan tuan rumah terbaik dan sangat ramah. Proses tempahan terus dapat resit rasmi dan kalendar senang semak tarikh. Pasti repeat lagi!"</p>
+                  <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pt-1 border-t border-purple-100">
+                    <span class="text-[#130C2E]">En. Haziq</span>
+                    <span class="text-[#7C5CFC]">Pulau Pinang</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT 5 COLS: UNIFIED AUTH PORTAL CARD -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <div class="bg-white p-6 sm:p-7 rounded-3xl shadow-lg border border-[#E8E3FA] space-y-5">
+              
+              <div class="text-center space-y-1.5">
+                <div class="w-14 h-14 rounded-2xl border-2 border-[#7C5CFC]/40 bg-[#130C2E] text-white flex items-center justify-center font-bold text-base mx-auto shadow-md shadow-purple-900/20">
+                  <span class="text-[#A78BFA] font-serif font-extrabold">SR</span>
+                </div>
+                <h2 class="text-lg font-extrabold text-[#130C2E] brand-title">Portal Tetamu SofiaRizqi</h2>
+                <p class="text-xs text-slate-500">Log Masuk untuk semak tempahan atau Daftar akaun baharu</p>
+              </div>
+
+              <!-- Toggle Buttons -->
+              <div class="flex bg-[#F3EFFF] p-1.5 rounded-2xl border border-[#E8E3FA]">
+                <button id="single-auth-btn-login" onclick="toggleSingleAuthMode('login')" class="flex-1 py-2.5 text-xs font-bold rounded-xl transition bg-white text-[#130C2E] shadow-sm">
+                  Log Masuk Akaun
+                </button>
+                <button id="single-auth-btn-reg" onclick="toggleSingleAuthMode('reg')" class="flex-1 py-2.5 text-xs font-bold rounded-xl transition text-slate-600 hover:text-[#130C2E]">
+                  Daftar Akaun Baharu
+                </button>
+              </div>
+
+              <!-- Form Log Masuk -->
+              <form id="single-form-login" onsubmit="handleSingleLoginSubmit(event)" autocomplete="off" class="space-y-3.5">
+                <div>
+                  <label class="block text-xs font-bold text-[#130C2E] mb-1">No. Telefon ATAU ID Pengguna <span class="text-red-500">*</span></label>
+                  <input type="text" id="single-login-id" required autocomplete="off" value="" placeholder="Cth: 0192298176 atau admin" class="w-full px-3.5 py-3 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-[#130C2E] mb-1">Kata Laluan <span class="text-red-500">*</span></label>
+                  <input type="password" id="single-login-password" required autocomplete="new-password" value="" placeholder="••••••••" class="w-full px-3.5 py-3 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                </div>
+                <button type="submit" class="w-full bg-[#7C5CFC] hover:bg-[#6845EC] text-white font-bold py-3.5 rounded-2xl text-xs shadow-md shadow-purple-500/25 transition transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+                  <i data-lucide="log-in" class="w-4 h-4"></i> Log Masuk Sekarang
+                </button>
+              </form>
+
+              <!-- Form Daftar Akaun Baharu -->
+              <form id="single-form-reg" onsubmit="handleSingleRegisterSubmit(event)" class="space-y-3 hidden">
+                <div>
+                  <label class="block text-xs font-bold text-[#130C2E] mb-1">Nama Penuh <span class="text-red-500">*</span></label>
+                  <input type="text" id="single-reg-name" required placeholder="Nama penuh anda" class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label class="block text-xs font-bold text-[#130C2E] mb-1">No. Telefon <span class="text-red-500">*</span></label>
+                    <input type="tel" id="single-reg-phone" required placeholder="019-XXXXXXX" class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-[#130C2E] mb-1">No. KP (KTP/IC)</label>
+                    <input type="text" id="single-reg-ic" placeholder="Kad Pengenalan" class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-[#130C2E] mb-1">Alamat Kediaman</label>
+                  <input type="text" id="single-reg-address" placeholder="Alamat penuh anda..." class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-[#130C2E] mb-1">Cipta Kata Laluan <span class="text-red-500">*</span></label>
+                  <input type="password" id="single-reg-password" required placeholder="••••••••" class="w-full px-3 py-2.5 bg-[#FAF8FF] border border-[#E8E3FA] rounded-2xl text-xs font-medium focus:ring-2 focus:ring-[#7C5CFC] focus:bg-white focus:outline-none transition">
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl text-xs shadow-md shadow-emerald-500/25 transition transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+                  <i data-lucide="user-plus" class="w-4 h-4"></i> Daftar Akaun Baharu
+                </button>
+              </form>
+
+              <div class="pt-2 border-t border-[#F0EBFE] flex items-center justify-center gap-2 text-[11px] text-slate-500">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i> Sistem Keselamatan & Privasi Terjamin
+              </div>
+            </div>
+
+            <!-- Quick WhatsApp Assistance Card -->
+            <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                  <i data-lucide="phone-call" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-[#130C2E]">Perlukan Bantuan Segera?</h4>
+                  <p class="text-[11px] text-slate-500">Hubungi terus Tuan Rumah melalui WhatsApp</p>
+                </div>
+              </div>
+              <a href="https://wa.me/60192298176" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-1.5 transition shrink-0 shadow-sm shadow-emerald-600/20">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+              </a>
+            </div>
+
+          </div>
 
         </div>
+
       </div>
 
       <!-- TAB 1: DASHBOARD & MAIN CALENDAR VIEW -->
@@ -331,6 +564,49 @@
 
           <!-- FullCalendar Mounting Point -->
           <div id="calendar-el" class="min-h-[500px]"></div>
+        </div>
+
+        <!-- HOMESTAY HIGHLIGHTS & HOUSE RULES GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Card 1: Peraturan Homestay (House Rules) -->
+          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
+            <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-[#7C5CFC]"></i> Peraturan Rumah (House Rules)
+            </h4>
+            <ul class="space-y-2 text-xs text-slate-600">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Makanan & minuman halal sahaja</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Dilarang merokok di dalam ruang rumah</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Waktu senyap selepas 11:00 malam</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Haiwan peliharaan tidak dibenarkan</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Lokasi & Tarikan Berdekatan -->
+          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
+            <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-[#7C5CFC]"></i> Lokasi & Tarikan Sekitar
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Lokasi strategik di Baling, Kedah. Berdekatan dengan kedai makan tempatan yang popular, pasar mini, stesen minyak, dan laluan utama.
+            </p>
+            <div class="pt-1 flex items-center gap-2">
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold text-[#7C5CFC] bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200/50">
+                <i data-lucide="navigation" class="w-3 h-3"></i> Akses Mudah & Tenang
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 3: Polisi Tempahan & Deposit -->
+          <div class="bg-white p-5 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
+            <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> Polisi Tempahan & Jaminan
+            </h4>
+            <ul class="space-y-2 text-xs text-slate-600">
+              <li class="flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-[#7C5CFC] shrink-0"></i> Check-in 3:00 PM | Check-out 12:00 PM</li>
+              <li class="flex items-center gap-2"><i data-lucide="credit-card" class="w-3.5 h-3.5 text-[#7C5CFC] shrink-0"></i> Deposit RM 100 untuk mengunci tarikh</li>
+              <li class="flex items-center gap-2"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5 text-emerald-500 shrink-0"></i> Deposit dipulangkan dalam tempoh 24 jam</li>
+            </ul>
+          </div>
         </div>
       </div>
 
