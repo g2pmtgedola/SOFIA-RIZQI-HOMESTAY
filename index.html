@@ -212,88 +212,148 @@
           <!-- LEFT 7 COLS: HOMESTAY AMENITIES, HOUSE RULES & TESTIMONIALS -->
           <div class="lg:col-span-7 space-y-6">
             
-            <!-- SECTION 1: KEMUDAHAN & FASILITI HOMESTAY -->
+            <!-- SECTION 1: GALERI FOTO HOMESTAY -->
             <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-4">
               <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-3">
                 <div>
                   <h3 class="text-base font-extrabold text-[#130C2E] flex items-center gap-2">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-[#7C5CFC]"></i> Kemudahan & Fasiliti Homestay
+                    <i data-lucide="image" class="w-4 h-4 text-[#7C5CFC]"></i> Galeri Suasana Homestay
                   </h3>
-                  <p class="text-xs text-slate-500">Disediakan khas untuk menjamin keselesaan anda dan sekeluarga</p>
+                  <p class="text-xs text-slate-500">Gambaran persekitaran dan keselesaan kediaman</p>
                 </div>
-                <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-purple-50 text-[#7C5CFC] border border-purple-200/60 hidden sm:inline-block">Serba Lengkap</span>
+                <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-purple-50 text-[#7C5CFC] border border-purple-200/60 hidden sm:inline-block">Selesa & Bersih</span>
               </div>
 
+              <!-- 4-Photo Responsive Grid -->
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <!-- Amenity 1 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="wind" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Bilik Berhawa Dingin Penuh</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Semua bilik tidur dilengkapi pendingin hawa dan kipas untuk tidur yang lena.</p>
-                  </div>
-                </div>
-
-                <!-- Amenity 2 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="waves" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Kolam Santai Peribadi</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Ruang mandian kolam santai yang bersih dan selamat untuk anak-anak bermain.</p>
+                <!-- Foto 1: Pandangan Luar -->
+                <div class="group relative rounded-2xl overflow-hidden border border-[#E8E3FA] shadow-sm bg-slate-100">
+                  <img src="assets/homestay_exterior.jpg" alt="Pandangan Luar Homestay" class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#130C2E]/85 via-transparent to-transparent flex items-end p-3">
+                    <div class="text-white">
+                      <p class="text-xs font-bold flex items-center gap-1.5"><i data-lucide="home" class="w-3.5 h-3.5 text-[#A78BFA]"></i> Pandangan Luar</p>
+                      <p class="text-[10px] text-purple-200">Kediaman tenang & persekitaran selamat</p>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Amenity 3 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="wifi" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">WiFi Pantas & Smart TV</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Sambungan internet laju percuma, akses YouTube dan saluran siaran hiburan.</p>
-                  </div>
-                </div>
-
-                <!-- Amenity 4 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="utensils" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Dapur Lengkap & Penapis Air</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Peti sejuk, cerek elektrik, penapis air Coway, mikrogelombang & perkakas asas.</p>
+                <!-- Foto 2: Ruang Tamu -->
+                <div class="group relative rounded-2xl overflow-hidden border border-[#E8E3FA] shadow-sm bg-slate-100">
+                  <img src="assets/homestay_living.jpg" alt="Ruang Tamu Homestay" class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#130C2E]/85 via-transparent to-transparent flex items-end p-3">
+                    <div class="text-white">
+                      <p class="text-xs font-bold flex items-center gap-1.5"><i data-lucide="tv" class="w-3.5 h-3.5 text-[#A78BFA]"></i> Ruang Tamu Utama</p>
+                      <p class="text-[10px] text-purple-200">Ruang santai keluarga luas & selesa</p>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Amenity 5 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="car" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Parkir Luas Berpagar</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Ruang porch yang luas dan selamat, boleh memuatkan sehingga 3 - 4 kenderaan.</p>
+                <!-- Foto 3: Bilik Tidur -->
+                <div class="group relative rounded-2xl overflow-hidden border border-[#E8E3FA] shadow-sm bg-slate-100">
+                  <img src="assets/homestay_bedroom.jpg" alt="Bilik Tidur Homestay" class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#130C2E]/85 via-transparent to-transparent flex items-end p-3">
+                    <div class="text-white">
+                      <p class="text-xs font-bold flex items-center gap-1.5"><i data-lucide="moon" class="w-3.5 h-3.5 text-[#A78BFA]"></i> Bilik Tidur Selesa</p>
+                      <p class="text-[10px] text-purple-200">Bilik kemas & berhawa dingin</p>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Amenity 6 -->
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
-                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="flame" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Peralatan BBQ & Patio</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Set BBQ dan ruang santai luar rumah untuk jamuan malam bersama keluarga.</p>
+                <!-- Foto 4: Ruang Dapur -->
+                <div class="group relative rounded-2xl overflow-hidden border border-[#E8E3FA] shadow-sm bg-slate-100">
+                  <img src="assets/homestay_kitchen.jpg" alt="Ruang Dapur Homestay" class="w-full h-40 object-cover group-hover:scale-105 transition duration-300">
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#130C2E]/85 via-transparent to-transparent flex items-end p-3">
+                    <div class="text-white">
+                      <p class="text-xs font-bold flex items-center gap-1.5"><i data-lucide="utensils" class="w-3.5 h-3.5 text-[#A78BFA]"></i> Dapur & Ruang Makan</p>
+                      <p class="text-[10px] text-purple-200">Kemudahan asas sedia digunakan</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SECTION 2: POLISI & WAKTU CHECK-IN / CHECK-OUT -->
+            <!-- SECTION 2: KEMUDAHAN & FASILITI HOMESTAY -->
+            <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-4">
+              <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-3">
+                <div>
+                  <h3 class="text-base font-extrabold text-[#130C2E] flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-[#7C5CFC]"></i> Kemudahan Penginapan
+                  </h3>
+                  <p class="text-xs text-slate-500">Kelengkapan disediakan untuk keselesaan sepanjang penginapan</p>
+                </div>
+                <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-purple-50 text-[#7C5CFC] border border-purple-200/60 hidden sm:inline-block">Lengkap</span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- Kemudahan 1 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="wind" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Bilik Berhawa Dingin</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Bilik tidur yang selesa, bersih dan dilengkapi pendingin hawa untuk rehat yang tenang.</p>
+                  </div>
+                </div>
+
+                <!-- Kemudahan 2 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="tv" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Ruang Tamu & Televisyen</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Ruang tamu keluarga yang luas untuk santai dan menonton rancangan televisyen bersama.</p>
+                  </div>
+                </div>
+
+                <!-- Kemudahan 3 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="wifi" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Akses WiFi</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Kemudahan internet tanpa wayar untuk kegunaan peribadi atau hiburan santai.</p>
+                  </div>
+                </div>
+
+                <!-- Kemudahan 4 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="utensils" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Kemudahan Dapur Asas</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Dilengkapi peti sejuk, cerek air, penapis air dan peralatan asas minuman & hidangan.</p>
+                  </div>
+                </div>
+
+                <!-- Kemudahan 5 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="car" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Ruang Parkir Kenderaan</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Kawasan meletak kereta berpagar yang selamat, mudah dan berdekatan pintu masuk.</p>
+                  </div>
+                </div>
+
+                <!-- Kemudahan 6 -->
+                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80 hover:border-[#7C5CFC]/40 transition">
+                  <div class="w-10 h-10 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
+                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-[#130C2E]">Persekitaran Tenang & Bersih</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Suasana kediaman yang damai, bersih dan privasi keluarga terjamin.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 3: POLISI & WAKTU CHECK-IN / CHECK-OUT -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div class="bg-white p-4 rounded-3xl border border-[#E8E3FA] shadow-sm flex items-center gap-3">
                 <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
@@ -329,7 +389,7 @@
               </div>
             </div>
 
-            <!-- SECTION 3: TESTIMONI TETAMU / ULASAN -->
+            <!-- SECTION 4: TESTIMONI TETAMU / ULASAN -->
             <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-3">
               <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-2">
                 <h4 class="text-xs font-extrabold text-[#130C2E] uppercase tracking-wider flex items-center gap-1.5">
@@ -346,18 +406,18 @@
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2">
-                  <p class="text-xs text-slate-700 italic">"Homestay sangat luas, bersih dan cantik! Dapur lengkap sangat mudah nak masak untuk famili besar 10 orang. Kolam santai anak-anak paling suka."</p>
+                  <p class="text-xs text-slate-700 italic">"Homestay sangat bersih, teratur dan selesa. Kemudahan yang disediakan mencukupi dan persekitaran sangat tenang untuk kami sekeluarga."</p>
                   <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pt-1 border-t border-purple-100">
                     <span class="text-[#130C2E]">Pn. Salmiah</span>
-                    <span class="text-[#7C5CFC]">Kuala Lumpur</span>
+                    <span class="text-[#7C5CFC]">Tetamu Keluarga</span>
                   </div>
                 </div>
 
                 <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2">
-                  <p class="text-xs text-slate-700 italic">"Layanan tuan rumah terbaik dan sangat ramah. Proses tempahan terus dapat resit rasmi dan kalendar senang semak tarikh. Pasti repeat lagi!"</p>
+                  <p class="text-xs text-slate-700 italic">"Layanan tuan rumah terbaik dan sangat mesra. Urusan tempahan mudah dan proses daftar masuk sangat lancar. Sangat berpuas hati!"</p>
                   <div class="flex items-center justify-between text-[11px] font-bold text-slate-500 pt-1 border-t border-purple-100">
                     <span class="text-[#130C2E]">En. Haziq</span>
-                    <span class="text-[#7C5CFC]">Pulau Pinang</span>
+                    <span class="text-[#7C5CFC]">Tetamu Rombongan</span>
                   </div>
                 </div>
               </div>
