@@ -1,0 +1,43 @@
+[
+  {
+    "id": "USR-ADMIN",
+    "role": "admin",
+    "name": "Pengurusan SofiaRizqi",
+    "phone": "0192298176",
+    "username": "admin",
+    "password": "1234",
+    "createdAt": "2026-08-25T00:00:00.000Z"
+  },
+  {
+    "id": "USR-2580",
+    "role": "penyewa",
+    "name": "MOHD AZRULNIZAM",
+    "phone": "0194218635",
+    "ic": "810316025699",
+    "username": "0194218635",
+    "password": "1234",
+    "address": "ALOR SETAR",
+    "createdAt": "2026-09-08T00:29:08.291Z"
+  },
+  {
+    "id": "USR-9713",
+    "role": "user",
+    "name": "IMAN NUR AMANI",
+    "phone": "0149176121",
+    "ic": "0149176121",
+    "username": "0149176121",
+    "password": "1234",
+    "address": "SP",
+    "createdAt": "2026-09-09T00:00:00.000Z"
+  },
+  {
+    "id": "USR-4736",
+    "name": "iman",
+    "phone": "0193218635",
+    "ic": "0193218635",
+    "address": "sp",
+    "role": "user",
+    "password": "1234",
+    "createdAt": "2026-09-08T01:49:39.320Z"
+  }
+]
