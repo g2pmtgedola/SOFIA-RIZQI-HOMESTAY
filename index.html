@@ -213,98 +213,174 @@
           <div class="lg:col-span-7 space-y-6">
             
             <!-- SECTION 1: PANDUAN CARA TEMPAHAN -->
-            <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-4">
-              <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-3">
+            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0EBFE] pb-4">
                 <div>
-                  <h3 class="text-base font-extrabold text-[#130C2E] flex items-center gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#7C5CFC]"></i> 3 Langkah Mudah Menempah
+                  <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-purple-100 text-[#7C5CFC] mb-1.5">
+                    ✦ PROSES MUDAH & PANTAS
+                  </div>
+                  <h3 class="text-xl font-black text-[#130C2E] tracking-tight flex items-center gap-2">
+                    3 Langkah Mudah Menempah
                   </h3>
-                  <p class="text-xs text-slate-500">Proses tempahan terus yang pantas, telus dan selamat</p>
+                  <p class="text-xs text-slate-500 font-medium">Sistem tempahan digital yang telus, selamat dan tanpa kerumitan</p>
                 </div>
-                <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-purple-50 text-[#7C5CFC] border border-purple-200/60 hidden sm:inline-block">Pantas & Telus</span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-[#EDE9FE] to-[#F5F3FF] text-[#7C5CFC] border border-[#DDD6FE] self-start sm:self-center">
+                  <span class="w-2 h-2 rounded-full bg-[#7C5CFC] animate-ping"></span>
+                  Pantas & Telus
+                </span>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+              <!-- 3 Stepper Cards -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <!-- Step 1 -->
-                <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2 relative overflow-hidden">
-                  <div class="w-9 h-9 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center font-extrabold text-xs">
-                    01
+                <div class="bg-[#FAF8FF] hover:bg-white p-5 rounded-2xl border-2 border-[#E8E3FA] hover:border-[#7C5CFC] shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-3">
+                      <div class="w-11 h-11 rounded-2xl bg-purple-100 text-[#7C5CFC] group-hover:bg-[#7C5CFC] group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                      </div>
+                      <span class="text-3xl font-black text-purple-200 group-hover:text-[#7C5CFC]/40 transition duration-300">01</span>
+                    </div>
+                    <span class="text-[10px] font-black uppercase tracking-wider text-[#7C5CFC] block mb-1">Langkah 1</span>
+                    <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight group-hover:text-[#7C5CFC] transition">Semak & Pilih Tarikh</h4>
+                    <p class="text-xs text-slate-600 font-medium leading-relaxed mt-1.5">
+                      Lihat kalendar ketersediaan untuk memilih tarikh bebas bagi percutian anda.
+                    </p>
                   </div>
-                  <h4 class="text-xs font-bold text-[#130C2E]">Semak Tarikh</h4>
-                  <p class="text-[11px] text-slate-500 leading-relaxed">Lihat kalendar ketersediaan untuk memilih tarikh bebas penginapan anda.</p>
+                  <div class="mt-4 pt-3 border-t border-purple-100/80 flex items-center gap-1.5 text-[11px] font-bold text-[#7C5CFC]">
+                    <span>Ketersediaan Langsung</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                  </div>
                 </div>
 
                 <!-- Step 2 -->
-                <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2 relative overflow-hidden">
-                  <div class="w-9 h-9 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center font-extrabold text-xs">
-                    02
+                <div class="bg-[#FAF8FF] hover:bg-white p-5 rounded-2xl border-2 border-[#E8E3FA] hover:border-[#7C5CFC] shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-3">
+                      <div class="w-11 h-11 rounded-2xl bg-indigo-100 text-[#6366F1] group-hover:bg-[#6366F1] group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
+                        <i data-lucide="file-check-2" class="w-5 h-5"></i>
+                      </div>
+                      <span class="text-3xl font-black text-indigo-200 group-hover:text-[#6366F1]/40 transition duration-300">02</span>
+                    </div>
+                    <span class="text-[10px] font-black uppercase tracking-wider text-[#6366F1] block mb-1">Langkah 2</span>
+                    <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight group-hover:text-[#6366F1] transition">Isi Butiran & Deposit</h4>
+                    <p class="text-xs text-slate-600 font-medium leading-relaxed mt-1.5">
+                      Masukkan nama penyewa dan muat naik resit bayaran deposit untuk jaminan kunci tarikh.
+                    </p>
                   </div>
-                  <h4 class="text-xs font-bold text-[#130C2E]">Isi Butiran & Deposit</h4>
-                  <p class="text-[11px] text-slate-500 leading-relaxed">Masukkan maklumat penyewa dan muat naik resit bayaran deposit untuk pengesahan.</p>
+                  <div class="mt-4 pt-3 border-t border-indigo-100/80 flex items-center gap-1.5 text-[11px] font-bold text-[#6366F1]">
+                    <span>Bayaran Deposit Selamat</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                  </div>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="p-4 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] space-y-2 relative overflow-hidden">
-                  <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-extrabold text-xs">
-                    03
+                <div class="bg-[#FAF8FF] hover:bg-white p-5 rounded-2xl border-2 border-[#E8E3FA] hover:border-emerald-500 shadow-sm hover:shadow-lg transition-all duration-300 relative group flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-3">
+                      <div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition duration-300 flex items-center justify-center shadow-sm">
+                        <i data-lucide="receipt" class="w-5 h-5"></i>
+                      </div>
+                      <span class="text-3xl font-black text-emerald-200 group-hover:text-emerald-500/40 transition duration-300">03</span>
+                    </div>
+                    <span class="text-[10px] font-black uppercase tracking-wider text-emerald-600 block mb-1">Langkah 3</span>
+                    <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight group-hover:text-emerald-600 transition">Kunci Tarikh & Resit</h4>
+                    <p class="text-xs text-slate-600 font-medium leading-relaxed mt-1.5">
+                      Tarikh anda dikunci dan sistem menjana resit rasmi digital PDF serta-merta.
+                    </p>
                   </div>
-                  <h4 class="text-xs font-bold text-[#130C2E]">Kunci Tarikh & Resit</h4>
-                  <p class="text-[11px] text-slate-500 leading-relaxed">Tarikh anda dikunci dan resit rasmi berformat PDF dijana secara automatik.</p>
+                  <div class="mt-4 pt-3 border-t border-emerald-100/80 flex items-center gap-1.5 text-[11px] font-bold text-emerald-600">
+                    <span>Resit Rasmi PDF</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Trust Assurance Banner -->
+              <div class="p-3.5 rounded-2xl bg-gradient-to-r from-[#130C2E] via-[#1E1446] to-[#130C2E] text-white flex flex-col sm:flex-row items-center justify-between gap-2.5 px-4 shadow-md">
+                <div class="flex items-center gap-2.5 text-xs font-bold text-purple-200">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span>Urusan Tempahan Rasmi & Dilindungi</span>
+                </div>
+                <div class="flex items-center gap-3 text-[11px] font-semibold text-purple-300">
+                  <span>✦ Tanpa Caj Tersembunyi</span>
+                  <span>✦ Tiada Orang Tengah</span>
                 </div>
               </div>
             </div>
 
             <!-- SECTION 2: KEISTIMEWAAN PENGINAPAN KAMI -->
-            <div class="bg-white p-6 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-4">
-              <div class="flex items-center justify-between border-b border-[#F0EBFE] pb-3">
+            <div class="bg-white p-6 sm:p-7 rounded-3xl border border-[#E8E3FA] shadow-sm space-y-5">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0EBFE] pb-4">
                 <div>
-                  <h3 class="text-base font-extrabold text-[#130C2E] flex items-center gap-2">
-                    <i data-lucide="award" class="w-4 h-4 text-[#7C5CFC]"></i> Keistimewaan Penginapan Kami
+                  <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-emerald-100 text-emerald-700 mb-1.5">
+                    ✦ NILAI & KESELESAAN TERJAMIN
+                  </div>
+                  <h3 class="text-xl font-black text-[#130C2E] tracking-tight flex items-center gap-2">
+                    Keistimewaan Penginapan Kami
                   </h3>
-                  <p class="text-xs text-slate-500">Komitmen kami dalam memberikan pengalaman menginap terbaik</p>
+                  <p class="text-xs text-slate-500 font-medium">Komitmen kami untuk memberikan pengalaman menginap yang damai dan selesa</p>
                 </div>
-                <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60 hidden sm:inline-block">Jaminan Selesa</span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-emerald-50 text-emerald-700 border border-emerald-200/80 self-start sm:self-center">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i> Jaminan Kualiti
+                </span>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80">
-                  <div class="w-9 h-9 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Card 1 -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] hover:border-[#7C5CFC] hover:shadow-md transition duration-300 space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7C5CFC] to-[#5B21B6] text-white flex items-center justify-center shadow-md shadow-purple-500/25">
+                      <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-purple-100 text-[#7C5CFC]">✦ TERUS PEMILIK</span>
                   </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Tempahan Sah & Terus</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Berurusan terus dengan pemilik tanpa orang tengah atau caj komisen tersembunyi.</p>
-                  </div>
+                  <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight">Tempahan Sah & Terus</h4>
+                  <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                    Berurusan terus dengan pemilik homestay tanpa orang tengah, mengelakkan sebarang caj komisen atau yuran tersembunyi.
+                  </p>
                 </div>
 
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80">
-                  <div class="w-9 h-9 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <!-- Card 2 -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] hover:border-emerald-500 hover:shadow-md transition duration-300 space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#10B981] to-[#047857] text-white flex items-center justify-center shadow-md shadow-emerald-500/25">
+                      <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700">✦ 100% SANITASI</span>
                   </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Kebersihan Terjamin</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Rumah dibersihkan dan disanitasi rapi setiap kali sebelum tetamu mendaftar masuk.</p>
-                  </div>
+                  <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight">Kebersihan Terjamin</h4>
+                  <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                    Kediaman sentiasa dibersihkan dan disanitasi secara menyeluruh sebelum ketibaan setiap tetamu untuk keselesaan keluarga.
+                  </p>
                 </div>
 
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80">
-                  <div class="w-9 h-9 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="key" class="w-4 h-4"></i>
+                <!-- Card 3 -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] hover:border-amber-500 hover:shadow-md transition duration-300 space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F59E0B] to-[#D97706] text-white flex items-center justify-center shadow-md shadow-amber-500/25">
+                      <i data-lucide="key" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-700">✦ MUDAH & PANTAS</span>
                   </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Urusan Check-In Mudah</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Panduan daftar masuk dan koordinasi lokasi dihantar terus kepada anda.</p>
-                  </div>
+                  <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight">Urusan Check-In Mudah</h4>
+                  <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                    Panduan daftar masuk serta pautan navigasi lokasi (Waze/Google Maps) dihantar terus ke telefon anda sebelum ketibaan.
+                  </p>
                 </div>
 
-                <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA]/80">
-                  <div class="w-9 h-9 rounded-xl bg-purple-100 text-[#7C5CFC] flex items-center justify-center shrink-0">
-                    <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+                <!-- Card 4 -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF8FF] border border-[#E8E3FA] hover:border-indigo-500 hover:shadow-md transition duration-300 space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6366F1] to-[#4338CA] text-white flex items-center justify-center shadow-md shadow-indigo-500/25">
+                      <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-indigo-100 text-[#6366F1]">✦ RESPON PANTAS</span>
                   </div>
-                  <div>
-                    <h4 class="text-xs font-bold text-[#130C2E]">Khidmat Mesra & Pantas</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">Bantuan dan maklumat disediakan bila-bila masa melalui perbualan WhatsApp.</p>
-                  </div>
+                  <h4 class="text-sm font-extrabold text-[#130C2E] tracking-tight">Khidmat Mesra & Pantas</h4>
+                  <p class="text-xs text-slate-600 font-medium leading-relaxed">
+                    Tuan rumah sedia membantu dan memberi maklum balas pantas melalui WhatsApp sekiranya terdapat sebarang pertanyaan.
+                  </p>
                 </div>
               </div>
             </div>
